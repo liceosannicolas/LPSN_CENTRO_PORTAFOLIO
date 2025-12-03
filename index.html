@@ -857,21 +857,40 @@
     </div>
   </footer>
 
- <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"
-        integrity="sha512-z+1Q9lK8DyZaR0/gt0XiY8hZRLVQjaxAg/P6MqxsVXni4eWh05rq6ArlTcidH8333AdxZKqM36zP2eLVObN8TA=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer"></script>
+   <!-- Anime.js primero -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"
+          integrity="sha512-z+1Q9lK8DyZaR0/gt0XiY8hZRLVQjaxAg/P6MqxsVXni4eWh05rq6ArlTcidH8333AdxZKqM36zP2eLVObN8TA=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer"></script>
 
+  <!-- JS principal e i18n -->
   <script src="assets/js/main.js"></script>
   <script src="assets/js/i18n.js"></script>
 
   <!-- Micro-interacciones para la línea de tiempo -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      if (typeof anime === 'undefined') return;
+      const cards = document.querySelectorAll('.timeline-card');
+      const pills = document.querySelectorAll('.milestone-pill');
 
-      var cards = document.querySelectorAll('.timeline-card');
+      // Si anime NO está disponible como función → solo scroll y estado activo, sin animaciones
+      if (typeof anime !== 'function') {
+        pills.forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var year = btn.dataset.year;
+            var target = document.querySelector('.timeline-card[data-year="' + year + '"]');
+            if (target) {
+              pills.forEach(function (b) { b.classList.remove('is-active'); });
+              btn.classList.add('is-active');
+              target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          });
+        });
+       
+        return;
+      }
 
+      // anime disponible con animaciones lindas
       cards.forEach(function (card, index) {
         card.style.opacity = 0;
         card.style.transform = 'translateY(24px)';
@@ -915,8 +934,6 @@
         });
       });
 
-      var pills = document.querySelectorAll('.milestone-pill');
-
       pills.forEach(function (btn) {
         btn.addEventListener('click', function () {
           var year = btn.dataset.year;
@@ -941,3 +958,4 @@
   </script>
 </body>
 </html>
+
