@@ -1219,7 +1219,6 @@
     const cards = document.querySelectorAll('.timeline-card');
 
     cards.forEach(function (card, index) {
-      // Animación de entrada al hacer scroll
       card.style.opacity = 0;
       card.style.transform = 'translateY(30px) scale(0.98)';
 
@@ -1242,7 +1241,6 @@
 
       observer.observe(card);
 
-      // Hover micro-interaction
       card.addEventListener('mouseenter', function () {
         anime({
           targets: card,
@@ -1252,7 +1250,6 @@
           easing: 'easeOutQuad'
         });
 
-        // Opcional: hacer brillar el "dot" de la píldora del mismo año
         const year = card.dataset.year;
         const pillDot = document.querySelector(
           '.milestone-pill[data-year="' + year + '"] .milestone-dot'
@@ -1310,8 +1307,19 @@
 
         setActiveYear(year);
 
-        // Scroll suave hacia la tarjeta correspondiente
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // Altura del header fijo
+        const header = document.querySelector('.topbar');
+        const headerHeight = header ? header.offsetHeight : 0;
+
+        // Posición de la tarjeta menos el header
+        const rect = target.getBoundingClientRect();
+        const y = window.scrollY + rect.top - headerHeight - 16;
+
+        // Scroll suave manual
+        window.scrollTo({
+          top: y,
+          behavior: 'smooth'
+        });
 
         // Resalte rápido de la tarjeta al hacer clic
         anime({
@@ -1328,7 +1336,7 @@
       });
     });
 
-    //  hacer clic en la tarjeta para marcar la píldora
+    // Click en tarjeta → marca la píldora correspondiente
     cards.forEach(function (card) {
       card.addEventListener('click', function () {
         const year = card.dataset.year;
@@ -1346,5 +1354,6 @@
     });
   });
 </script>
+
 
 
