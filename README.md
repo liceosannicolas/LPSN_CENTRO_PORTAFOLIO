@@ -22,6 +22,8 @@ El sitio tiene controles inclusivos en todos los portafolios:
 - 🌐 Cambio de idioma (ES/EN/FR) para textos clave
 - 🔍 Buscador sobre las tarjetas del hub
 
+  ** SI PRESIONA EL BOTON 🌐 Cambio de idioma (ES/EN/FR) Y LUEGO PRESIONA (HACIENDO CLIC) EN EL BOTON 🗣️ Narrador del contenido. NARRA EL SITIO EN EL IDIOMA SELECCIONADO.
+
 ## Uso sugerido en la postulación GSP
 
 - Utiliza este centro web como **punto de entrada general**.
