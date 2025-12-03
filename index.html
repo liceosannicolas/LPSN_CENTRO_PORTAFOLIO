@@ -1437,94 +1437,108 @@
   <script src="assets/js/main.js"></script>
   <script src="assets/js/i18n.js"></script>
 
-  <!-- Micro-interacciones para la línea de tiempo -->
-
+<!-- Micro-interacciones para la línea de tiempo -->
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    if (typeof anime === 'undefined') return;
+    const hasAnime = (typeof anime !== 'undefined');
 
     // === Tarjetas de hitos (timeline-card) ===
     const cards = document.querySelectorAll('.timeline-card');
-
-    cards.forEach(function (card, index) {
-      card.style.opacity = 0;
-      card.style.transform = 'translateY(30px) scale(0.98)';
-
-      const observer = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            anime({
-              targets: card,
-              opacity: 1,
-              translateY: 0,
-              scale: 1,
-              duration: 700,
-              delay: index * 80,
-              easing: 'easeOutQuad'
-            });
-            observer.unobserve(card);
-          }
-        });
-      }, { threshold: 0.25 });
-
-      observer.observe(card);
-
-      card.addEventListener('mouseenter', function () {
-        anime({
-          targets: card,
-          scale: 1.03,
-          translateY: -6,
-          duration: 220,
-          easing: 'easeOutQuad'
-        });
-
-        const year = card.dataset.year;
-        const pillDot = document.querySelector(
-          '.milestone-pill[data-year="' + year + '"] .milestone-dot'
-        );
-        if (pillDot) {
-          anime({
-            targets: pillDot,
-            scale: 1.12,
-            duration: 220,
-            easing: 'easeOutQuad'
-          });
-        }
-      });
-
-      card.addEventListener('mouseleave', function () {
-        anime({
-          targets: card,
-          scale: 1,
-          translateY: 0,
-          duration: 220,
-          easing: 'easeOutQuad'
-        });
-
-        const year = card.dataset.year;
-        const pillDot = document.querySelector(
-          '.milestone-pill[data-year="' + year + '"] .milestone-dot'
-        );
-        if (pillDot) {
-          anime({
-            targets: pillDot,
-            scale: 1,
-            duration: 200,
-            easing: 'easeOutQuad'
-          });
-        }
-      });
-    });
-
-    // === Píldoras de años (milestone-pill) sincronizadas con tarjetas ===
     const pills = document.querySelectorAll('.milestone-pill');
 
+    // Clase activa en las píldoras
     function setActiveYear(year) {
       pills.forEach(function (b) {
         b.classList.toggle('is-active', b.dataset.year === year);
       });
     }
 
+    // Si hay una píldora marcada en el HTML (2003), sincronizamos
+    const initialPill = document.querySelector('.milestone-pill.is-active');
+    if (initialPill) {
+      setActiveYear(initialPill.dataset.year);
+    }
+
+    // === Animación de aparición / hover solo si existe anime.js ===
+    if (hasAnime) {
+      cards.forEach(function (card, index) {
+        card.style.opacity = 0;
+        card.style.transform = 'translateY(30px) scale(0.98)';
+
+        const observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              anime({
+                targets: card,
+                opacity: 1,
+                translateY: 0,
+                scale: 1,
+                duration: 700,
+                delay: index * 80,
+                easing: 'easeOutQuad'
+              });
+              observer.unobserve(card);
+            }
+          });
+        }, { threshold: 0.25 });
+
+        observer.observe(card);
+
+        card.addEventListener('mouseenter', function () {
+          anime({
+            targets: card,
+            scale: 1.03,
+            translateY: -6,
+            duration: 220,
+            easing: 'easeOutQuad'
+          });
+
+          const year = card.dataset.year;
+          const pillDot = document.querySelector(
+            '.milestone-pill[data-year="' + year + '"] .milestone-dot'
+          );
+          if (pillDot) {
+            anime({
+              targets: pillDot,
+              scale: 1.12,
+              duration: 220,
+              easing: 'easeOutQuad'
+            });
+          }
+        });
+
+        card.addEventListener('mouseleave', function () {
+          anime({
+            targets: card,
+            scale: 1,
+            translateY: 0,
+            duration: 220,
+            easing: 'easeOutQuad'
+          });
+
+          const year = card.dataset.year;
+          const pillDot = document.querySelector(
+            '.milestone-pill[data-year="' + year + '"] .milestone-dot'
+          );
+          if (pillDot) {
+            anime({
+              targets: pillDot,
+              scale: 1,
+              duration: 200,
+              easing: 'easeOutQuad'
+            });
+          }
+        });
+      });
+    } else {
+      // Sin anime.js: aseguramos que las tarjetas se vean normales
+      cards.forEach(function (card) {
+        card.style.opacity = 1;
+        card.style.transform = 'none';
+      });
+    }
+
+    // === Click en píldoras de años (siempre funciona) ===
     pills.forEach(function (btn) {
       btn.addEventListener('click', function () {
         const year = btn.dataset.year;
@@ -1543,45 +1557,56 @@
         const rect = target.getBoundingClientRect();
         const y = window.scrollY + rect.top - headerHeight - 16;
 
-        // Scroll suave manual
         window.scrollTo({
           top: y,
           behavior: 'smooth'
         });
 
-        // Resalte rápido de la tarjeta al hacer clic
-        anime({
-          targets: target,
-          scale: [1, 1.04],
-          borderColor: [
-            'rgba(250,204,21,0.8)',
-            'rgba(34,197,94,0.95)'
-          ],
-          duration: 550,
-          direction: 'alternate',
-          easing: 'easeOutQuad'
-        });
+        // Resalte rápido de la tarjeta
+        if (hasAnime) {
+          anime({
+            targets: target,
+            scale: [1, 1.04],
+            borderColor: [
+              'rgba(250,204,21,0.8)',
+              'rgba(34,197,94,0.95)'
+            ],
+            duration: 550,
+            direction: 'alternate',
+            easing: 'easeOutQuad'
+          });
+        } else {
+          target.classList.add('timeline-card-flash');
+          setTimeout(function () {
+            target.classList.remove('timeline-card-flash');
+          }, 500);
+        }
       });
     });
 
-    // Click en tarjeta → marca la píldora correspondiente
+    // Click en tarjeta → marca la píldora correspondiente (si existe)
     cards.forEach(function (card) {
       card.addEventListener('click', function () {
         const year = card.dataset.year;
         if (!year) return;
+
         setActiveYear(year);
 
-        anime({
-          targets: card,
-          scale: [1, 1.04],
-          duration: 400,
-          direction: 'alternate',
-          easing: 'easeOutQuad'
-        });
+        if (hasAnime) {
+          anime({
+            targets: card,
+            scale: [1, 1.04],
+            duration: 400,
+            direction: 'alternate',
+            easing: 'easeOutQuad'
+          });
+        } else {
+          card.classList.add('timeline-card-flash');
+          setTimeout(function () {
+            card.classList.remove('timeline-card-flash');
+          }, 500);
+        }
       });
     });
   });
 </script>
-
-
-
