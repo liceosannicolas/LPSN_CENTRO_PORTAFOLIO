@@ -32,16 +32,13 @@ html {
 }
 
 body {
-margin: 0;
+  margin: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    background: #020617;
-
-
+  background: #020617;
   color: var(--text-main);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-
 }
 
 body.light-theme {
@@ -67,8 +64,7 @@ body.light-theme .tag {
 }
 
 body.light-theme .footer {
-    background: #020617;
-
+  background: #020617;
   border-top-color: #e5e7eb;
 }
 
@@ -310,7 +306,6 @@ body.light-theme .section.alt {
   background: #f9fafb;
 }
 
-
 .section h2 {
   font-size: 1.3rem;
   margin-bottom: 14px;
@@ -500,7 +495,6 @@ body.light-theme .section.alt {
   box-shadow: 0 6px 18px rgba(15,23,42,0.5);
 }
 
-
 .footer-meta {
   text-align: right;
 }
@@ -532,7 +526,6 @@ body.light-theme .section.alt {
     text-align: left;
   }
 }
-
 
 /* Simple image carousel for imágenes.html */
 .image-carousel {
@@ -684,4 +677,235 @@ body.light-theme .carousel-track {
   transform: translateY(-1px) scale(1.02);
 }
 
+/* =========================================================
+   NUEVO: Línea de tiempo de hitos + cartas de vinculación
+   ========================================================= */
 
+.timeline-section {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.timeline-header {
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.timeline-header h2 {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-header p {
+  max-width: 52rem;
+  color: #e5e7eb;
+  font-size: 0.95rem;
+}
+
+.timeline-track {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin-top: 1.75rem;
+  margin-bottom: 2.25rem;
+  padding: 1.25rem 1.25rem 1.5rem;
+  border-radius: 1.5rem;
+  background: radial-gradient(circle at top left, rgba(250, 204, 21, 0.12), rgba(15, 23, 42, 0.98));
+  border: 1px solid rgba(148, 163, 184, 0.55);
+  box-shadow: 0 22px 45px rgba(15, 23, 42, 0.95);
+  overflow: hidden;
+}
+
+.timeline-track::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 2px;
+  background: linear-gradient(90deg, #facc15, #22c55e, #38bdf8);
+  opacity: 0.85;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.timeline-track-bg {
+  position: absolute;
+  inset: 0;
+  opacity: 0.22;
+  background-image: url('../img/hitos_importantes_lpsn.jpg');
+  background-size: cover;
+  background-position: center;
+  mix-blend-mode: soft-light;
+  pointer-events: none;
+}
+
+.timeline-logo-pill {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.9rem;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.25rem 0.7rem 0.25rem 0.25rem;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(250, 204, 21, 0.9);
+  box-shadow: 0 16px 34px rgba(15, 23, 42, 0.95);
+}
+
+.timeline-logo-pill img {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background: #facc15;
+  padding: 0.15rem;
+}
+
+.timeline-logo-pill span {
+  font-size: 0.78rem;
+  color: #facc15;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.milestone-pill {
+  position: relative;
+  z-index: 1;
+  flex: 1 1 110px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.milestone-dot {
+  position: relative;
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 30%, #facc15, #0f172a 65%);
+  border: 3px solid #facc15;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fbbf24;
+  font-weight: 700;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.95);
+  transition: transform 0.25s ease-out, box-shadow 0.25s ease-out, background 0.25s ease-out;
+}
+
+.milestone-pill:hover .milestone-dot {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 18px 40px rgba(37, 99, 235, 0.95);
+  background: radial-gradient(circle at 30% 30%, #facc15, #111827 70%);
+}
+
+.milestone-pill.is-active .milestone-dot {
+  transform: translateY(-6px) scale(1.08);
+  background: radial-gradient(circle at 30% 30%, #22c55e, #0f172a 70%);
+  color: #bbf7d0;
+  box-shadow: 0 22px 50px rgba(34, 197, 94, 0.95);
+}
+
+.milestone-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #e5e7eb;
+  text-align: center;
+  max-width: 8rem;
+}
+
+.timeline-details {
+  margin-top: 2rem;
+}
+
+.timeline-details-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1.1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 900px) {
+  .timeline-details-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.timeline-card {
+  position: relative;
+  padding: 1.6rem 1.4rem 1.4rem 1.4rem;
+  border-radius: 1.25rem;
+  background: radial-gradient(circle at top left, rgba(250, 204, 21, 0.08), #020617 50%, #020617 100%);
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.95);
+  overflow: hidden;
+}
+
+.timeline-card::before {
+  content: "";
+  position: absolute;
+  inset-block: 0.5rem;
+  left: 0.5rem;
+  width: 3px;
+  border-radius: 999px;
+  background: linear-gradient(to bottom, #facc15, #22c55e);
+  opacity: 0.9;
+}
+
+.timeline-card-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+}
+
+.timeline-card-year {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #facc15;
+}
+
+.timeline-card-badge {
+  border-radius: 999px;
+  padding: 0.2rem 0.7rem;
+  font-size: 0.78rem;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  color: #e5e7eb;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  white-space: nowrap;
+}
+
+.timeline-card h3 {
+  font-size: 1.02rem;
+  margin-bottom: 0.35rem;
+}
+
+.timeline-card p {
+  font-size: 0.9rem;
+  color: #e5e7eb;
+  margin-bottom: 0.25rem;
+}
+
+.timeline-card p.small {
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+.timeline-links-title {
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.2rem;
+}
