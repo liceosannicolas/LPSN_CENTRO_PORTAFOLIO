@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title
+    data-i18n-es="Alianzas ambientales, científicas y comunitarias"
+    data-i18n-en="Environmental, scientific and community alliances"
+    data-i18n-fr="Alliances environnementales, scientifiques et communautaires"
+  >
+    Alianzas ambientales, científicas y comunitarias
+  </title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <meta name="theme-color" content="#022c22" />
+</head>
+<body class="dark-theme">
+  <a href="#main-content"
+     class="skip-link"
+     data-i18n-es="Saltar al contenido principal"
+     data-i18n-en="Skip to main content"
+     data-i18n-fr="Passer au contenu principal">
+    Saltar al contenido principal
+  </a>
+
+  <!-- Barra superior con controles inclusivos -->
+  <header class="topbar">
+    <div class="container navbar">
+      <div class="logo-wrap">
+        <img src="assets/img/logo-liceo-sannicolas.svg"
+             alt="Logo Liceo Bicentenario San Nicolás"
+             class="logo-img" />
+        <div class="logo-text">
+          <span class="logo-title"
+                data-i18n-es="Liceo Bicentenario de Excelencia Polivalente San Nicolás"
+                data-i18n-en="Liceo Bicentenario de Excelencia Polivalente San Nicolás"
+                data-i18n-fr="Liceo Bicentenario de Excelencia Polivalente San Nicolás">
+            Liceo Bicentenario de Excelencia Polivalente San Nicolás
+          </span>
+          <span class="logo-subtitle"
+                data-i18n-es="Portafolio Sustentabilidad – Global Schools Prize"
+                data-i18n-en="Sustainability Portfolio – Global Schools Prize"
+                data-i18n-fr="Portefeuille de durabilité – Global Schools Prize">
+            Portafolio Sustentabilidad – Global Schools Prize
+          </span>
+        </div>
+      </div>
+
+      <div class="topbar-right">
+        <button class="icon-btn" id="btn-home"
+                title="Ir al inicio"
+                data-i18n-title-es="Ir al inicio"
+                data-i18n-title-en="Go to start"
+                data-i18n-title-fr="Revenir au début">
+          🏠
+        </button>
+        <button class="icon-btn" id="btn-theme"
+                title="Cambiar tema claro/oscuro"
+                data-i18n-title-es="Cambiar tema claro/oscuro"
+                data-i18n-title-en="Toggle light/dark theme"
+                data-i18n-title-fr="Basculer entre thème clair/sombre">
+          🌓
+        </button>
+        <button class="icon-btn" id="btn-font-inc"
+                title="Aumentar tamaño de letra"
+                data-i18n-title-es="Aumentar tamaño de letra"
+                data-i18n-title-en="Increase font size"
+                data-i18n-title-fr="Augmenter la taille de la police">
+          A+
+        </button>
+        <button class="icon-btn" id="btn-font-dec"
+                title="Disminuir tamaño de letra"
+                data-i18n-title-es="Disminuir tamaño de letra"
+                data-i18n-title-en="Decrease font size"
+                data-i18n-title-fr="Diminuer la taille de la police">
+          A−
+        </button>
+        <button class="icon-btn" id="btn-narrator"
+                title="Activar narrador del contenido"
+                data-i18n-title-es="Activar narrador del contenido"
+                data-i18n-title-en="Activate content reader"
+                data-i18n-title-fr="Activer la lecture du contenu">
+          🗣️
+        </button>
+        <button class="icon-btn" id="btn-language"
+                title="Cambiar idioma ES/EN/FR">
+          🌐
+        </button>
+        <div class="search-wrapper">
+          <span class="search-icon">🔍</span>
+          <input
+            type="search"
+            id="search-input"
+            placeholder="Buscar proyectos o conceptos de sustentabilidad…"
+            aria-label="Buscar en el portafolio"
+            data-i18n-placeholder-es="Buscar proyectos o conceptos de sustentabilidad…"
+            data-i18n-placeholder-en="Search sustainability projects or concepts…"
+            data-i18n-placeholder-fr="Rechercher des projets ou des notions de durabilité…"
+            data-i18n-aria-label-es="Buscar en el portafolio"
+            data-i18n-aria-label-en="Search in the portfolio"
+            data-i18n-aria-label-fr="Rechercher dans le portefeuille"
+          />
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sub-header de la página -->
+  <div class="container sub-header-inner">
+    <h1
+      data-i18n-es="🤝 Alianzas ambientales, científicas y comunitarias"
+      data-i18n-en="🤝 Environmental, scientific and community alliances"
+      data-i18n-fr="🤝 Alliances environnementales, scientifiques et communautaires">
+      🤝 Alianzas ambientales, científicas y comunitarias
+    </h1>
+    <a href="index.html"
+       class="sub-back"
+       data-i18n-es="⬅ Volver 🏠"
+       data-i18n-en="⬅ Back 🏠"
+       data-i18n-fr="⬅ Retour 🏠">
+      ⬅ Volver 🏠
+    </a>
+  </div>
+
+  <main id="main-content" class="container page">
+    <!-- Intro -->
+    <section class="page-section">
+      <h2
+        data-i18n-es="Mapa de alianzas para la sustentabilidad"
+        data-i18n-en="Alliance map for sustainability"
+        data-i18n-fr="Carte des alliances pour la durabilité">
+        Mapa de alianzas para la sustentabilidad
+      </h2>
+      <p
+        data-i18n-es="El trabajo en sustentabilidad del liceo no se desarrolla en forma aislada: se nutre de alianzas con centros de investigación, universidades, organizaciones territoriales y redes que amplían las oportunidades de aprendizaje para los estudiantes."
+        data-i18n-en="The school's sustainability work does not develop in isolation: it is nourished by alliances with research centers, universities, territorial organizations and networks that expand learning opportunities for students."
+        data-i18n-fr="Le travail de durabilité du lycée ne se développe pas de manière isolée : il est nourri par des alliances avec des centres de recherche, des universités, des organisations territoriales et des réseaux qui élargissent les possibilités d’apprentissage pour les élèves.">
+        El trabajo en sustentabilidad del liceo no se desarrolla en forma aislada: se nutre de alianzas con centros de
+        investigación, universidades, organizaciones territoriales y redes que amplían las oportunidades de aprendizaje
+        para los estudiantes.
+      </p>
+      <p
+        data-i18n-es="En esta página se destacan algunas de las alianzas clave, con una breve descripción de la colaboración y acceso directo a las cartas de vinculación que acompañan la postulación al Global Schools Prize."
+        data-i18n-en="This page highlights some of the key alliances, with a brief description of the collaboration and direct access to the partnership letters that accompany the Global Schools Prize application."
+        data-i18n-fr="Cette page met en avant quelques alliances clés, avec une brève description de la collaboration et un accès direct aux lettres de liaison qui accompagnent la candidature au Global Schools Prize.">
+        En esta página se destacan algunas de las alianzas clave, con una breve descripción de la colaboración y acceso
+        directo a las cartas de vinculación que acompañan la postulación al
+        <strong>Global Schools Prize</strong>.
+      </p>
+    </section>
+
+    <!-- Alianzas destacadas -->
+    <section class="page-section">
+      <h2
+        data-i18n-es="🙌🏻 Alianzas destacadas"
+        data-i18n-en="🙌🏻 Highlighted alliances"
+        data-i18n-fr="🙌🏻 Alliances mises en avant">
+        Alianzas destacadas
+      </h2>
+      <div class="card-grid">
+        <!-- INCAR -->
+        <article class="card"
+                 data-search-tags="incar centro investigacion acuicultura ciencia sustentabilidad feria regional">
+          <h3
+            data-i18n-es="🔬 Centro INCAR – Universidad de Concepción"
+            data-i18n-en="🔬 INCAR Center – Universidad de Concepción"
+            data-i18n-fr="🔬 Centre INCAR – Université de Concepción">
+            🔬 Centro INCAR – Universidad de Concepción
+          </h3>
+          <p
+            data-i18n-es="El Centro Interdisciplinario para la Investigación Acuícola (INCAR) mantiene una colaboración sostenida con el liceo, acompañando proyectos sobre sustentabilidad de ecosistemas acuáticos, acuicultura responsable y cuidado del medio ambiente."
+            data-i18n-en="The Interdisciplinary Center for Aquaculture Research (INCAR) maintains an ongoing collaboration with the school, supporting projects on the sustainability of aquatic ecosystems, responsible aquaculture and environmental care."
+            data-i18n-fr="Le Centre interdisciplinaire pour la recherche en aquaculture (INCAR) maintient une collaboration continue avec le lycée, en accompagnant des projets sur la durabilité des écosystèmes aquatiques, l’aquaculture responsable et la protection de l’environnement.">
+            El Centro Interdisciplinario para la Investigación Acuícola (INCAR) mantiene una colaboración sostenida con
+            el liceo, acompañando proyectos sobre sustentabilidad de ecosistemas acuáticos, acuicultura responsable y
+            cuidado del medio ambiente.
+          </p>
+          <ul class="key-list">
+            <li
+              data-i18n-es="Asesoría científica y técnica en proyectos escolares de acuicultura y sustentabilidad."
+              data-i18n-en="Scientific and technical advice in school projects on aquaculture and sustainability."
+              data-i18n-fr="Conseil scientifique et technique dans des projets scolaires d’aquaculture et de durabilité.">
+              Asesoría científica y técnica en proyectos escolares de acuicultura y sustentabilidad.
+            </li>
+            <li
+              data-i18n-es="Talleres y charlas para estudiantes y docentes sobre desafíos ambientales en la Región de Ñuble."
+              data-i18n-en="Workshops and talks for students and teachers on environmental challenges in the Ñuble Region."
+              data-i18n-fr="Ateliers et conférences pour les élèves et les enseignants sur les défis environnementaux dans la région de Ñuble.">
+              Talleres y charlas para estudiantes y docentes sobre desafíos ambientales en la Región de Ñuble.
+            </li>
+            <li
+              data-i18n-es="Apoyo a iniciativas que integran ciencia, tecnología y sostenibilidad, fortaleciendo habilidades STEM."
+              data-i18n-en="Support for initiatives that integrate science, technology and sustainability, strengthening STEM skills."
+              data-i18n-fr="Soutien aux initiatives qui intègrent science, technologie et durabilité, en renforçant les compétences STEM.">
+              Apoyo a iniciativas que integran ciencia, tecnología y sostenibilidad, fortaleciendo habilidades STEM.
+            </li>
+            <li
+              data-i18n-es="Co-organización de la Feria Regional Educativa de Ciencia e Innovación: Agua, Tierra y Tecnología para un Futuro Sustentable."
+              data-i18n-en="Co-organization of the Regional Educational Fair of Science and Innovation: Water, Land and Technology for a Sustainable Future."
+              data-i18n-fr="Co-organisation de la Foire régionale éducative de science et d’innovation : Eau, Terre et Technologie pour un avenir durable.">
+              Co-organización de la
+              <em>Feria Regional Educativa de Ciencia e Innovación: Agua, Tierra y Tecnología para un Futuro Sustentable</em>.
+            </li>
+          </ul>
+          <div class="card-actions">
+            <a
+              href="cartas_vinculacion/LPSN_Carta_vinculación_INCAR.pdf"
+              class="btn-primary"
+              target="_blank"
+              rel="noopener"
+              download
+              data-i18n-es="📄 Descargar vinculación INCAR (PDF)"
+              data-i18n-en="📄 Download INCAR partnership letter (PDF)"
+              data-i18n-fr="📄 Télécharger la lettre de partenariat avec l’INCAR (PDF)">
+              📄 Descargar vinculación INCAR (PDF)
+            </a>
+          </div>
+          <p class="note"
+             data-i18n-es="Esta alianza refuerza la dimensión científica del portafolio, conectando el trabajo escolar con la investigación de frontera en acuicultura sustentable."
+             data-i18n-en="This alliance reinforces the scientific dimension of the portfolio, connecting school work with cutting-edge research in sustainable aquaculture."
+             data-i18n-fr="Cette alliance renforce la dimension scientifique du portefeuille, en reliant le travail scolaire à la recherche de pointe en aquaculture durable.">
+            Esta alianza refuerza la dimensión científica del portafolio, conectando el trabajo escolar con la
+            investigación de frontera en acuicultura sustentable.
+          </p>
+        </article>
+
+        <!-- Universidad San Sebastián -->
+        <article class="card"
+                 data-search-tags="universidad san sebastian salud rehabilitacion inclusion vcm ortesis diseno sin barreras">
+          <h3
+            data-i18n-es="🩺 Universidad San Sebastián – Proyectos de salud, inclusión y VcM"
+            data-i18n-en="🩺 Universidad San Sebastián – Health, inclusion and outreach projects"
+            data-i18n-fr="🩺 Université San Sebastián – Projets de santé, inclusion et VcM">
+            🩺 Universidad San Sebastián – Proyectos de salud, inclusión y VcM
+          </h3>
+          <p
+            data-i18n-es="La Universidad San Sebastián (USS) colabora con el liceo en proyectos que vinculan salud, rehabilitación e inclusión, especialmente en iniciativas como la órtesis 3D y otras acciones de apoyo a estudiantes con necesidades de movilidad."
+            data-i18n-en="Universidad San Sebastián (USS) collaborates with the school in projects that connect health, rehabilitation and inclusion, especially in initiatives such as the 3D orthosis and other actions that support students with mobility needs."
+            data-i18n-fr="L’Université San Sebastián (USS) collabore avec le lycée dans des projets qui relient santé, rééducation et inclusion, en particulier dans des initiatives comme l’orthèse 3D et d’autres actions de soutien aux élèves ayant des besoins de mobilité.">
+            La Universidad San Sebastián (USS) colabora con el liceo en proyectos que vinculan salud, rehabilitación e
+            inclusión, especialmente en iniciativas como la órtesis 3D y otras acciones de apoyo a estudiantes con
+            necesidades de movilidad.
+          </p>
+          <ul class="key-list">
+            <li
+              data-i18n-es="Trabajo conjunto en diseño, evaluación y mejora de soluciones de apoyo a la movilidad (como órtesis 3D) con foco en la calidad de vida de estudiantes."
+              data-i18n-en="Joint work on the design, evaluation and improvement of mobility support solutions (such as 3D orthoses), focusing on students' quality of life."
+              data-i18n-fr="Travail conjoint sur la conception, l’évaluation et l’amélioration de solutions de soutien à la mobilité (comme les orthèses 3D), en mettant l’accent sur la qualité de vie des élèves.">
+              Trabajo conjunto en diseño, evaluación y mejora de soluciones de apoyo a la movilidad (como órtesis 3D)
+              con foco en la calidad de vida de estudiantes.
+            </li>
+            <li
+              data-i18n-es="Actividades de Vinculación con el Medio (VcM) que acercan a las familias y a la comunidad al trabajo universitario en salud y rehabilitación."
+              data-i18n-en="Community engagement activities that bring families and the local community closer to the university's work in health and rehabilitation."
+              data-i18n-fr="Activités de liaison avec le milieu (VcM) qui rapprochent les familles et la communauté du travail universitaire en santé et rééducation.">
+              Actividades de Vinculación con el Medio (VcM) que acercan a las familias y a la comunidad al trabajo
+              universitario en salud y rehabilitación.
+            </li>
+            <li
+              data-i18n-es="Espacios de formación y reflexión sobre inclusión, autonomía y derechos de las personas con discapacidad."
+              data-i18n-en="Training and reflection spaces on inclusion, autonomy and the rights of people with disabilities."
+              data-i18n-fr="Espaces de formation et de réflexion sur l’inclusion, l’autonomie et les droits des personnes en situation de handicap.">
+              Espacios de formación y reflexión sobre inclusión, autonomía y derechos de las personas con discapacidad.
+            </li>
+            <li
+              data-i18n-es="Coordinación entre equipos del liceo y académicos de la universidad para fortalecer proyectos que conectan salud, escuela y territorio."
+              data-i18n-en="Coordination between school teams and university academics to strengthen projects that connect health, school and territory."
+              data-i18n-fr="Coordination entre les équipes du lycée et les universitaires pour renforcer des projets qui relient santé, école et territoire.">
+              Coordinación entre equipos del liceo y académicos de la universidad para fortalecer proyectos que
+              conectan salud, escuela y territorio.
+            </li>
+          </ul>
+          <div class="card-actions">
+            <a
+              href="cartas_vinculacion/LPSN_Carta_vinculación_2024_Proyecto_VCM.pdf"
+              class="btn-primary"
+              target="_blank"
+              rel="noopener"
+              download
+              data-i18n-es="📄 Descargar vinculación USS (PDF)"
+              data-i18n-en="📄 Download Universidad San Sebastián partnership letter (PDF)"
+              data-i18n-fr="📄 Télécharger la lettre de partenariat avec l’Université San Sebastián (PDF)">
+              📄 Descargar vinculación USS (PDF)
+            </a>
+          </div>
+          <p class="note"
+             data-i18n-es="Esta alianza fortalece la dimensión de salud e inclusión del portafolio, mostrando cómo la escuela articula tecnología, rehabilitación y trabajo conjunto con la educación superior."
+             data-i18n-en="This alliance strengthens the health and inclusion dimension of the portfolio, showing how the school brings together technology, rehabilitation and joint work with higher education."
+             data-i18n-fr="Cette alliance renforce la dimension santé et inclusion du portefeuille, en montrant comment l’école articule technologie, rééducation et travail conjoint avec l’enseignement supérieur.">
+            Esta alianza fortalece la dimensión de salud e inclusión del portafolio, mostrando cómo la escuela articula
+            tecnología, rehabilitación y trabajo conjunto con la educación superior.
+          </p>
+        </article>
+
+        <!-- ONG Oxum -->
+        <article class="card"
+                 data-search-tags="ong oxum participacion ciudadania comunidad territorio derechos estudiantes">
+          <h3
+            data-i18n-es="🌊 ONG Oxum – Ciudadanía y compromiso comunitario"
+            data-i18n-en="🌊 ONG Oxum – Citizenship and community commitment"
+            data-i18n-fr="🌊 ONG Oxum – Citoyenneté et engagement communautaire">
+            🌊 ONG Oxum – Ciudadanía y compromiso comunitario
+          </h3>
+          <p
+            data-i18n-es="La O.N.G. Oxum trabaja con el liceo en la formación ciudadana y el fortalecimiento del compromiso comunitario, mediante charlas y espacios formativos que ponen en el centro la participación estudiantil y el vínculo con el territorio."
+            data-i18n-en="ONG Oxum works with the school on citizenship education and strengthening community engagement, through talks and training spaces that place student participation and connection with the territory at the center."
+            data-i18n-fr="L’ONG Oxum travaille avec le lycée sur la formation citoyenne et le renforcement de l’engagement communautaire, à travers des conférences et des espaces de formation qui placent au centre la participation des élèves et le lien avec le territoire.">
+            La O.N.G. Oxum trabaja con el liceo en la formación ciudadana y el fortalecimiento del compromiso
+            comunitario, mediante charlas y espacios formativos que ponen en el centro la participación estudiantil y el
+            vínculo con el territorio.
+          </p>
+          <ul class="key-list">
+            <li
+              data-i18n-es="Encuentros con estudiantes sobre participación ciudadana y organización social."
+              data-i18n-en="Meetings with students about citizen participation and social organization."
+              data-i18n-fr="Rencontres avec des élèves sur la participation citoyenne et l’organisation sociale.">
+              Encuentros con estudiantes sobre participación ciudadana y organización social.
+            </li>
+            <li
+              data-i18n-es="Reflexión sobre derechos, deberes y responsabilidad social en contextos reales."
+              data-i18n-en="Reflection on rights, duties and social responsibility in real contexts."
+              data-i18n-fr="Réflexion sur les droits, les devoirs et la responsabilité sociale dans des contextes réels.">
+              Reflexión sobre derechos, deberes y responsabilidad social en contextos reales.
+            </li>
+            <li
+              data-i18n-es="Articulación entre escuela, comunidad local y organizaciones de la sociedad civil."
+              data-i18n-en="Articulation between school, local community and civil society organizations."
+              data-i18n-fr="Articulation entre l’école, la communauté locale et les organisations de la société civile.">
+              Articulación entre escuela, comunidad local y organizaciones de la sociedad civil.
+            </li>
+            <li
+              data-i18n-es="Apoyo explícito a la postulación del liceo al Global Schools Prize por su enfoque inclusivo y vinculado al territorio."
+              data-i18n-en="Explicit support for the school's Global Schools Prize application for its inclusive and community-linked approach."
+              data-i18n-fr="Soutien explicite à la candidature du lycée au Global Schools Prize pour son approche inclusive et ancrée dans le territoire.">
+              Apoyo explícito a la postulación del liceo al Global Schools Prize por su enfoque inclusivo y vinculado al
+              territorio.
+            </li>
+          </ul>
+          <div class="card-actions">
+            <a
+              href="cartas_vinculacion/LPSN_Carta_vinculación_ONG_Oxum.pdf"
+              class="btn-primary"
+              target="_blank"
+              rel="noopener"
+              download
+              data-i18n-es="📄 Descargar vinculación ONG Oxum (PDF)"
+              data-i18n-en="📄 Download ONG Oxum partnership letter (PDF)"
+              data-i18n-fr="📄 Télécharger la lettre de partenariat avec l’ONG Oxum (PDF)">
+              📄 Descargar vinculación ONG Oxum (PDF)
+            </a>
+          </div>
+          <p class="note"
+             data-i18n-es="Esta alianza complementa la dimensión científica con una mirada ciudadana, ética y comunitaria, reforzando la idea de la escuela como espacio de participación democrática."
+             data-i18n-en="This alliance complements the scientific dimension with a civic, ethical and community perspective, reinforcing the idea of the school as a space for democratic participation."
+             data-i18n-fr="Cette alliance complète la dimension scientifique par une perspective citoyenne, éthique et communautaire, en renforçant l’idée de l’école comme espace de participation démocratique.">
+            Esta alianza complementa la dimensión científica con una mirada ciudadana, ética y comunitaria, reforzando
+            la idea de la escuela como espacio de participación democrática.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Tabla / esquema sugerido -->
+    <section class="page-section">
+      <h2
+        data-i18n-es="Resumen de alianzas y evidencias"
+        data-i18n-en="Summary of alliances and evidence"
+        data-i18n-fr="Résumé des alliances et des preuves">
+        Resumen de alianzas y evidencias
+      </h2>
+      <p
+        data-i18n-es="Para efectos de la postulación y del trabajo interno del liceo, se sugiere mantener un registro actualizado de las alianzas en una tabla simple, que luego puede replicarse en este mismo sitio o en una hoja de cálculo."
+        data-i18n-en="For the purposes of the application and the school's internal work, it is recommended to keep an updated record of alliances in a simple table, which can then be replicated on this site or in a spreadsheet."
+        data-i18n-fr="Pour la candidature et le travail interne du lycée, il est recommandé de maintenir un registre à jour des alliances dans un tableau simple, qui peut ensuite être reproduit sur ce site ou dans une feuille de calcul.">
+        Para efectos de la postulación y del trabajo interno del liceo, se sugiere mantener un registro actualizado de
+        las alianzas en una tabla simple, que luego puede replicarse en este mismo sitio o en una hoja de cálculo.
+      </p>
+
+      <div class="table-wrapper">
+        <table class="simple-table">
+          <thead>
+            <tr>
+              <th
+                data-i18n-es="Institución"
+                data-i18n-en="Institution"
+                data-i18n-fr="Institution">
+                Institución
+              </th>
+              <th
+                data-i18n-es="Tipo de colaboración"
+                data-i18n-en="Type of collaboration"
+                data-i18n-fr="Type de collaboration">
+                Tipo de colaboración
+              </th>
+              <th
+                data-i18n-es="Año de inicio"
+                data-i18n-en="Start year"
+                data-i18n-fr="Année de début">
+                Año de inicio
+              </th>
+              <th
+                data-i18n-es="Evidencias clave"
+                data-i18n-en="Key evidence"
+                data-i18n-fr="Preuves clés">
+                Evidencias clave
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td
+                data-i18n-es="Centro INCAR – UdeC"
+                data-i18n-en="INCAR Center – UdeC"
+                data-i18n-fr="Centre INCAR – UdeC">
+                Centro INCAR – UdeC
+              </td>
+              <td
+                data-i18n-es="Asesoría científica, talleres, proyectos de investigación escolar y feria regional."
+                data-i18n-en="Scientific advice, workshops, school research projects and regional fair."
+                data-i18n-fr="Conseil scientifique, ateliers, projets de recherche scolaire et foire régionale.">
+                Asesoría científica, talleres, proyectos de investigación escolar y feria regional.
+              </td>
+              <td>2024</td>
+              <td
+                data-i18n-es="Cartas de apoyo, registros de talleres, proyectos de acuicultura y feria regional Agua, Tierra y Tecnología."
+                data-i18n-en="Support letters, workshop records, aquaculture projects and the Water, Land and Technology regional fair."
+                data-i18n-fr="Lettres de soutien, comptes rendus d’ateliers, projets d’aquaculture et foire régionale Eau, Terre et Technologie.">
+                Cartas de apoyo, registros de talleres, proyectos de acuicultura y feria regional
+                <em>Agua, Tierra y Tecnología</em>.
+              </td>
+            </tr>
+            <tr>
+              <td
+                data-i18n-es="Universidad San Sebastián"
+                data-i18n-en="Universidad San Sebastián"
+                data-i18n-fr="Université San Sebastián">
+                Universidad San Sebastián
+              </td>
+              <td
+                data-i18n-es="Proyectos de salud, rehabilitación e inclusión vinculados a órtesis 3D y apoyo a estudiantes con necesidades de movilidad."
+                data-i18n-en="Health, rehabilitation and inclusion projects linked to 3D orthoses and support for students with mobility needs."
+                data-i18n-fr="Projets de santé, rééducation et inclusion liés aux orthèses 3D et au soutien d’élèves ayant des besoins de mobilité.">
+                Proyectos de salud, rehabilitación e inclusión vinculados a órtesis 3D y apoyo a estudiantes con
+                necesidades de movilidad.
+              </td>
+              <td>2024</td>
+              <td
+                data-i18n-es="Carta de vinculación, registros de actividades VcM, fotografías de trabajo conjunto y evidencias del proyecto Diseño sin Barreras."
+                data-i18n-en="Partnership letter, outreach activity records, photos of joint work and evidence from the Diseño sin Barreras project."
+                data-i18n-fr="Lettre de partenariat, registres d’activités de VcM, photographies de travail conjoint et preuves du projet Diseño sin Barreras.">
+                Carta de vinculación, registros de actividades VcM, fotografías de trabajo conjunto y evidencias del
+                proyecto <em>Diseño sin Barreras</em>.
+              </td>
+            </tr>
+            <tr>
+              <td
+                data-i18n-es="ONG Oxum"
+                data-i18n-en="ONG Oxum"
+                data-i18n-fr="ONG Oxum">
+                ONG Oxum
+              </td>
+              <td
+                data-i18n-es="Charlas y espacios formativos en participación ciudadana y compromiso comunitario."
+                data-i18n-en="Talks and training spaces on citizen participation and community commitment."
+                data-i18n-fr="Conférences et espaces de formation sur la participation citoyenne et l’engagement communautaire.">
+                Charlas y espacios formativos en participación ciudadana y compromiso comunitario.
+              </td>
+              <td>2025</td>
+              <td
+                data-i18n-es="Cartas de apoyo, actas de actividades, fotografías y testimonios estudiantiles."
+                data-i18n-en="Support letters, activity minutes, photos and student testimonies."
+                data-i18n-fr="Lettres de soutien, procès-verbaux d’activités, photographies et témoignages d’élèves.">
+                Cartas de apoyo, actas de actividades, fotografías y testimonios estudiantiles.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note"
+         data-i18n-es="Puedes agregar nuevas filas para otras alianzas (municipalidad, universidades, centros de salud, etc.) y enlazar sus evidencias desde este mismo portafolio."
+         data-i18n-en="You can add new rows for other alliances (municipality, universities, health centers, etc.) and link their evidence from this same portfolio."
+         data-i18n-fr="Tu peux ajouter de nouvelles lignes pour d’autres alliances (municipalité, universités, centres de santé, etc.) et relier leurs preuves depuis ce même portefeuille.">
+        Puedes agregar nuevas filas para otras alianzas (municipalidad, universidades, centros de salud, etc.) y
+        enlazar sus evidencias desde este mismo portafolio.
+      </p>
+    </section>
+
+    <!-- Galería con las fotos -->
+    <section class="page-section">
+      <h2
+        data-i18n-es="Galería de momentos y proyectos vinculados"
+        data-i18n-en="Gallery of linked moments and projects"
+        data-i18n-fr="Galerie de moments et de projets associés">
+        Galería de momentos y proyectos vinculados
+      </h2>
+      <p
+        data-i18n-es="Estas imágenes muestran resultados concretos del trabajo colaborativo: estudiantes participando en instancias formativas y proyectos de innovación que conectan inclusión, tecnología y sustentabilidad."
+        data-i18n-en="These images show concrete results of collaborative work: students participating in educational instances and innovation projects that connect inclusion, technology and sustainability."
+        data-i18n-fr="Ces images montrent des résultats concrets du travail collaboratif : des élèves participant à des espaces de formation et à des projets d’innovation qui relient inclusion, technologie et durabilité.">
+        Estas imágenes muestran resultados concretos del trabajo colaborativo: estudiantes participando en instancias
+        formativas y proyectos de innovación que conectan inclusión, tecnología y sustentabilidad.
+      </p>
+
+      <div class="card-grid">
+        <!-- Foto certificación feria / alianza INCAR -->
+        <article class="card" data-search-tags="feria regional certificacion estudiantes incAR agua tierra tecnologia">
+          <figure>
+            <img
+              src="imagenes/alianzas_certificacion.jpg"
+              alt="Estudiantes del Liceo Bicentenario San Nicolás recibiendo certificados en una feria de ciencia e innovación."
+              style="width:100%; border-radius:18px; object-fit:cover; max-height:260px;"
+            />
+            <figcaption class="note"
+                        data-i18n-es="Estudiantes del liceo recibiendo certificación en la Feria Regional Educativa de Ciencia e Innovación: Agua, Tierra y Tecnología para un Futuro Sustentable, co-organizada con el Centro INCAR y otras instituciones."
+                        data-i18n-en="Students from the school receiving certificates at the Regional Educational Fair of Science and Innovation: Water, Land and Technology for a Sustainable Future, co-organized with the INCAR Center and other institutions."
+                        data-i18n-fr="Des élèves du lycée recevant une certification lors de la Foire régionale éducative de science et d’innovation : Eau, Terre et Technologie pour un avenir durable, co-organisée avec le Centre INCAR et d’autres institutions.">
+              Estudiantes del liceo recibiendo certificación en la
+              <strong>Feria Regional Educativa de Ciencia e Innovación: Agua, Tierra y Tecnología para un Futuro Sustentable</strong>,
+              instancia co-organizada con el Centro INCAR y otras instituciones.
+            </figcaption>
+          </figure>
+        </article>
+
+        <!-- Foto órtesis 3D primer plano -->
+        <article class="card" data-search-tags="ortesis 3d diseno sin barreras inclusion tecnologia asistiva">
+          <figure>
+            <img
+              src="imagenes/alianzas_ortesis_1.jpg"
+              alt="Órtesis roja y celeste impresa en 3D, en primer plano sobre una mesa."
+              style="width:100%; border-radius:18px; object-fit:cover; max-height:260px;"
+            />
+            <figcaption class="note"
+                        data-i18n-es="Prototipo de órtesis impresa en 3D desarrollado en el proyecto Diseño sin Barreras, que articula tecnología asistiva, inclusión y trabajo colaborativo entre estudiantes, familia y profesionales externos."
+                        data-i18n-en="Prototype of a 3D-printed orthosis developed in the Diseño sin Barreras project, which connects assistive technology, inclusion and collaborative work between students, families and external professionals."
+                        data-i18n-fr="Prototype d’orthèse imprimée en 3D développé dans le cadre du projet Diseño sin Barreras, qui articule technologie d’assistance, inclusion et travail collaboratif entre élèves, familles et professionnels externes.">
+              Prototipo de órtesis impresa en 3D desarrollado en el proyecto
+              <strong>Diseño sin Barreras</strong>, que articula tecnología asistiva, inclusión y trabajo colaborativo
+              entre estudiantes, familia y profesionales externos.
+            </figcaption>
+          </figure>
+        </article>
+
+        <!-- Foto órtesis 3D completa -->
+        <article class="card" data-search-tags="ortesis pierna completa movilidad inclusion proyecto diseno sin barreras">
+          <figure>
+            <img
+              src="imagenes/alianzas_ortesis_2.jpg"
+              alt="Órtesis de pierna completa roja y celeste apoyada en un mueble dentro de la sala."
+              style="width:100%; border-radius:18px; object-fit:cover; max-height:260px;"
+            />
+            <figcaption class="note"
+                        data-i18n-es="Vista completa de la órtesis de pierna, diseñada a partir de las necesidades de una estudiante, como ejemplo de innovación con foco en la autonomía y la calidad de vida."
+                        data-i18n-en="Full view of the leg orthosis, designed based on the needs of a student, as an example of innovation focused on autonomy and quality of life."
+                        data-i18n-fr="Vue complète de l’orthèse de jambe, conçue à partir des besoins d’une élève, comme exemple d’innovation centrée sur l’autonomie et la qualité de vie.">
+              Vista completa de la órtesis de pierna, diseñada a partir de las necesidades de una estudiante, como
+              ejemplo de innovación con foco en la autonomía y la calidad de vida.
+            </figcaption>
+          </figure>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="assets/img/logo-liceo-sannicolas.svg"
+             alt="Logo Liceo Bicentenario San Nicolás"
+             class="footer-logo" />
+        <div>
+          <p
+            data-i18n-es="<strong>Liceo Bicentenario de Excelencia Polivalente San Nicolás</strong>"
+            data-i18n-en="<strong>Liceo Bicentenario de Excelencia Polivalente San Nicolás</strong>"
+            data-i18n-fr="<strong>Liceo Bicentenario de Excelencia Polivalente San Nicolás</strong>">
+            <strong>Liceo Bicentenario de Excelencia Polivalente San Nicolás</strong>
+          </p>
+          <p
+            data-i18n-es="Centro de Portafolios – <strong>Global School Prize</strong>"
+            data-i18n-en="Portfolios Hub – <strong>Global Schools Prize</strong>"
+            data-i18n-fr="Centre de portefeuilles – <strong>Global Schools Prize</strong>">
+            Centro de Portafolios – <strong>Global School Prize</strong>
+          </p>
+        </div>
+      </div>
+      <div class="footer-meta">
+        <p
+          data-i18n-es="Sitio para organizar los portafolios por categoría."
+          data-i18n-en="Site to organize portfolios by category."
+          data-i18n-fr="Site pour organiser les portefeuilles par catégorie.">
+          Sitio para organizar los portafolios por categoría.
+        </p>
+        <p
+          data-i18n-es="Controles inclusivos: tema, tamaño de letra, narrador y cambio de idioma ES/EN/FR."
+          data-i18n-en="Inclusive controls: theme, font size, reader and language change ES/EN/FR."
+          data-i18n-fr="Contrôles inclusifs : thème, taille de police, lecteur et changement de langue ES/EN/FR.">
+          Controles inclusivos: tema, tamaño de letra, narrador y cambio de idioma ES/EN/FR.
+        </p>
+        <p
+          data-i18n-es="Sitio desarrollado por: Francisco Pinto, UTP y todo el equipo técnico para la postulación al <strong>Global School Prize</strong>."
+          data-i18n-en="Site developed by: Francisco Pinto, UTP and the whole technical team for the <strong>Global Schools Prize</strong> application."
+          data-i18n-fr="Site développé par : Francisco Pinto, l’UTP et toute l’équipe technique pour la candidature au <strong>Global Schools Prize</strong>.">
+          Sitio desarrollado por: Francisco Pinto, UTP y todo el equipo técnico para la postulación al <strong>Global School Prize</strong>.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/animejs/dist/bundles/anime.umd.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/i18n.js"></script>
+</body>
+</html>
