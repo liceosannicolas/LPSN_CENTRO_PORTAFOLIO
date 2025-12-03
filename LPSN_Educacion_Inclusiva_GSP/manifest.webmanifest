@@ -1,0 +1,9 @@
+{
+  "name": "Portafolio Educación Inclusiva – Global Schools Prize",
+  "short_name": "Inclusión",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#020617",
+  "theme_color": "#1e1b4b",
+  "icons": []
+}
