@@ -1,0 +1,1447 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title
+    data-i18n-es="Centro Portafolios – Global Schools Prize"
+    data-i18n-en="Portfolios Hub – Global Schools Prize"
+    data-i18n-fr="Centre de portefeuilles – Global Schools Prize">
+    Centro Portafolios – Global Schools Prize
+  </title>
+  <meta
+    name="description"
+    content="Centro de portafolios del Liceo Bicentenario de Excelencia Polivalente San Nicolás para la postulación al Global Schools Prize en las categorías STEM, Artes, Inclusión, Superación a la Adversidad y Sustentabilidad."
+  />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <meta name="theme-color" content="#020617" />
+
+  <!-- Estilos específicos línea de tiempo de hitos + cartas -->
+  <style>
+    .timeline-section {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+
+    .timeline-header {
+      text-align: left;
+      margin-bottom: 2rem;
+    }
+
+    .timeline-header h2 {
+      font-size: 1.75rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-header p {
+      max-width: 52rem;
+      color: #e5e7eb;
+      font-size: 0.95rem;
+    }
+
+    .timeline-visual-grid {
+      display: grid;
+      gap: 2rem;
+      align-items: center;
+      margin-bottom: 2.5rem;
+    }
+
+    @media (min-width: 900px) {
+      .timeline-visual-grid {
+        grid-template-columns: minmax(0, 2fr) minmax(0, 1.4fr);
+      }
+    }
+
+    .timeline-visual-inner {
+      position: relative;
+      border-radius: 1.5rem;
+      overflow: hidden;
+      border: 2px solid #facc15; /* amarillo institucional */
+      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.8);
+      background: radial-gradient(circle at top left, #facc15 0, #020617 40%, #020617 100%);
+    }
+
+    .timeline-img {
+      width: 100%;
+      display: block;
+    }
+
+    .timeline-logo-overlay {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      width: 72px;
+      height: auto;
+      padding: 0.35rem;
+      border-radius: 999px;
+      background: #facc15;
+      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.9);
+    }
+
+    .timeline-caption {
+      margin-top: 0.75rem;
+      font-size: 0.9rem;
+      color: #cbd5f5;
+    }
+
+    .timeline-years h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .timeline-years-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .timeline-year-btn {
+      border-radius: 999px;
+      border: 1px solid #facc15;
+      background: #020617;
+      color: #e5e7eb;
+      padding: 0.35rem 0.8rem;
+      font-size: 0.85rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: transform 0.18s ease-out, box-shadow 0.18s ease-out, background 0.18s ease-out, color 0.18s ease-out;
+    }
+
+    .timeline-year-btn::before {
+      content: "";
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.25);
+    }
+
+    .timeline-year-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.8);
+      background: #0f172a;
+    }
+
+    .timeline-year-btn.is-active {
+      background: linear-gradient(135deg, #1d4ed8, #38bdf8);
+      color: #0b1120;
+      box-shadow: 0 14px 30px rgba(37, 99, 235, 0.75);
+    }
+
+    .timeline-years-note {
+      font-size: 0.8rem;
+      color: #9ca3af;
+    }
+
+    .timeline-cards {
+      margin-top: 1.5rem;
+    }
+
+    .timeline-cards-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 1.25rem;
+    }
+
+    @media (min-width: 900px) {
+      .timeline-cards-grid {
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+      }
+    }
+
+    .timeline-card {
+      position: relative;
+      padding: 1.6rem 1.4rem 1.4rem 1.4rem;
+      border-radius: 1.25rem;
+      background: radial-gradient(circle at top left, rgba(250, 204, 21, 0.08), #020617 50%, #020617 100%);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.95);
+      overflow: hidden;
+    }
+
+    .timeline-card::before {
+      content: "";
+      position: absolute;
+      inset-block: 0.5rem;
+      left: 0.5rem;
+      width: 3px;
+      border-radius: 999px;
+      background: linear-gradient(to bottom, #facc15, #22c55e);
+      opacity: 0.9;
+    }
+
+    .timeline-card-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.5rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .timeline-card-year {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #facc15;
+    }
+
+    .timeline-card-badge {
+      border-radius: 999px;
+      padding: 0.2rem 0.7rem;
+      font-size: 0.78rem;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      color: #e5e7eb;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      white-space: nowrap;
+    }
+
+    .timeline-card h3 {
+      font-size: 1.02rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .timeline-card p {
+      font-size: 0.9rem;
+      color: #e5e7eb;
+      margin-bottom: 0.25rem;
+    }
+
+    .timeline-card p.small {
+      font-size: 0.8rem;
+      color: #9ca3af;
+    }
+
+    .timeline-card + .timeline-card {
+      margin-top: 0.5rem;
+    }
+
+    .timeline-links-title {
+      margin-top: 2.5rem;
+      margin-bottom: 0.75rem;
+      font-size: 1.2rem;
+    }
+
+    .timeline-card .btn-secondary {
+      margin-top: 0.7rem;
+      font-size: 0.8rem;
+      padding-inline: 0.9rem;
+      padding-block: 0.45rem;
+    }
+
+    .timeline-card .btn-secondary span {
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body class="dark-theme">
+  <a href="#main-content"
+     class="skip-link"
+     data-i18n-es="Saltar al contenido principal"
+     data-i18n-en="Skip to main content"
+     data-i18n-fr="Passer au contenu principal">
+    Saltar al contenido principal
+  </a>
+
+  <header class="topbar">
+    <div class="container navbar">
+      <div class="logo-wrap">
+        <img src="assets/img/logo-liceo-sannicolas.svg"
+             alt="Logo Liceo Bicentenario San Nicolás"
+             class="logo-img" />
+        <div class="logo-text">
+          <span class="logo-title"
+                data-i18n-es="Liceo Bicentenario de Excelencia Polivalente San Nicolás"
+                data-i18n-en="Liceo Bicentenario de Excelencia Polivalente San Nicolás"
+                data-i18n-fr="Liceo Bicentenario de Excelencia Polivalente San Nicolás">
+            Liceo Bicentenario de Excelencia Polivalente San Nicolás
+          </span>
+          <span class="logo-subtitle"
+                data-i18n-es="Centro de Portafolios – Global Schools Prize"
+                data-i18n-en="Portfolios Hub – Global Schools Prize"
+                data-i18n-fr="Centre de portefeuilles – Global Schools Prize">
+            Centro de Portafolios – Global Schools Prize
+          </span>
+        </div>
+      </div>
+
+      <div class="topbar-right">
+        <button class="icon-btn" id="btn-home"
+                title="Ir al inicio"
+                data-i18n-title-es="Ir al inicio"
+                data-i18n-title-en="Go to start"
+                data-i18n-title-fr="Revenir au début">
+          🏠
+        </button>
+        <button class="icon-btn" id="btn-theme"
+                title="Cambiar tema claro/oscuro"
+                data-i18n-title-es="Cambiar tema claro/oscuro"
+                data-i18n-title-en="Toggle light/dark theme"
+                data-i18n-title-fr="Basculer entre thème clair/sombre">
+          🌓
+        </button>
+        <button class="icon-btn" id="btn-font-inc"
+                title="Aumentar tamaño de letra"
+                data-i18n-title-es="Aumentar tamaño de letra"
+                data-i18n-title-en="Increase font size"
+                data-i18n-title-fr="Augmenter la taille de la police">
+          A+
+        </button>
+        <button class="icon-btn" id="btn-font-dec"
+                title="Disminuir tamaño de letra"
+                data-i18n-title-es="Disminuir tamaño de letra"
+                data-i18n-title-en="Decrease font size"
+                data-i18n-title-fr="Diminuer la taille de la police">
+          A−
+        </button>
+        <button class="icon-btn" id="btn-narrator"
+                title="Activar narrador del contenido"
+                data-i18n-title-es="Activar narrador del contenido"
+                data-i18n-title-en="Activate content reader"
+                data-i18n-title-fr="Activer la lecture du contenu">
+          🗣️
+        </button>
+        <button class="icon-btn" id="btn-language"
+                title="Cambiar idioma ES/EN/FR">
+          🌐
+        </button>
+        <div class="search-wrapper">
+          <span class="search-icon">🔍</span>
+          <input
+            type="search"
+            id="search-input"
+            placeholder="Buscar categoría o proyecto…"
+            aria-label="Buscar en el Centro"
+            data-i18n-placeholder-es="Buscar categoría o proyecto…"
+            data-i18n-placeholder-en="Search category or project…"
+            data-i18n-placeholder-fr="Rechercher une catégorie ou un projet…"
+            data-i18n-aria-label-es="Buscar en el Centro"
+            data-i18n-aria-label-en="Search in the hub"
+            data-i18n-aria-label-fr="Rechercher dans le centre"
+          />
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h1
+            data-i18n-es="Centro de portafolios – Global Schools Prize"
+            data-i18n-en="Portfolios Hub – Global Schools Prize"
+            data-i18n-fr="Centre de portefeuilles – Global Schools Prize">
+            Centro de portafolios – Global Schools Prize
+          </h1>
+
+          <p class="hero-lead"
+             data-i18n-es="Este Centro organiza los cinco portafolios del <strong>liceo</strong> para la postulación al <strong>Global Schools Prize</strong>, conectando STEM, Artes, Inclusión, Superación a la Adversidad y Sustentabilidad desde el PEI."
+             data-i18n-en="This hub organizes the school's five portfolios for the <strong>Global Schools Prize</strong> application, connecting STEM, Arts, Inclusion, Overcoming Adversity and Sustainability from the School Project (PEI)."
+             data-i18n-fr="Ce centre organise les cinq portefeuilles du <strong>lycée</strong> pour la candidature au <strong>Global Schools Prize</strong>, en reliant STEM, Arts, Inclusion, Dépassement de l’adversité et Durabilité à partir du PEI.">
+            Este centro organiza los cinco portafolios del liceo para la postulación al Global Schools Prize, conectando
+            Superación a la Adversidad, Artes, STEM, Inclusión y Sustentabilidad desde el PEI.
+          </p>
+
+          <p class="hero-note"
+             data-i18n-es="Pensado para ser el <strong>punto de entrada</strong> que se puede usar como enlace maestro en correos, presentaciones y, cuando corresponda, como uno de los enlaces web permitidos en las respuestas del premio."
+             data-i18n-en="Designed to be the <strong>main entry point</strong> that can be used as a master link in emails, presentations and, when appropriate, as one of the web links allowed in the prize responses."
+             data-i18n-fr="Conçu comme le <strong>point d’entrée principal</strong> pouvant être utilisé comme lien maître dans les courriels, les présentations et, le cas échéant, comme l’un des liens web autorisés dans les réponses au prix.">
+            Pensado para ser el <strong>punto de entrada</strong> que se puede usar como enlace maestro en correos,
+            presentaciones y, cuando corresponda, como uno de los enlaces web permitidos en las respuestas del premio.
+          </p>
+
+          <div class="hero-tags">
+            <span class="tag"
+                  data-i18n-es="💪 Superación"
+                  data-i18n-en="💪 Overcoming"
+                  data-i18n-fr="💪 Dépassement">
+              💪 Superación
+            </span>
+            <span class="tag"
+                  data-i18n-es="🎨 Artes"
+                  data-i18n-en="🎨 Arts"
+                  data-i18n-fr="🎨 Arts">
+              🎨 Artes
+            </span>
+            <span class="tag"
+                  data-i18n-es="🔬 STEM"
+                  data-i18n-en="🔬 STEM"
+                  data-i18n-fr="🔬 STEM">
+              🔬 STEM
+            </span>
+            <span class="tag"
+                  data-i18n-es="♿ Inclusión"
+                  data-i18n-en="♿ Inclusion"
+                  data-i18n-fr="♿ Inclusion">
+              ♿ Inclusión
+            </span>
+            <span class="tag"
+                  data-i18n-es="🌱 Sustentabilidad"
+                  data-i18n-en="🌱 Sustainability"
+                  data-i18n-fr="🌱 Durabilité">
+              🌱 Sustentabilidad
+            </span>
+          </div>
+        </div>
+
+        <div class="hero-card"
+             aria-label="Recomendación de uso del centro"
+             data-i18n-aria-label-es="Recomendación de uso del centro"
+             data-i18n-aria-label-en="Recommendations for using the hub"
+             data-i18n-aria-label-fr="Recommandations pour l’utilisation du centre">
+          <h2
+            data-i18n-es="Cómo usar este centro"
+            data-i18n-en="How to use this hub"
+            data-i18n-fr="Comment utiliser ce centre">
+            Cómo usar este centro
+          </h2>
+          <ol>
+            <li
+              data-i18n-es="🔗 Usa este centro para navegar rápidamente entre las cinco categorías."
+              data-i18n-en="🔗 Use this hub to navigate quickly between the five categories."
+              data-i18n-fr="🔗 Utilise ce centre pour naviguer rapidement entre les cinq catégories.">
+              🔗 Usa este centro para navegar rápidamente entre las cinco categorías.
+            </li>
+            <li
+              data-i18n-es="📝 En el formulario del Global Schools Prize, enlaza directamente a los portafolios específicos según la pregunta."
+              data-i18n-en="📝 In the Global Schools Prize form, link directly to the specific portfolios according to each question."
+              data-i18n-fr="📝 Dans le formulaire du Global Schools Prize, crée des liens directs vers les portefeuilles spécifiques en fonction de chaque question.">
+              📝 En el formulario del Global Schools Prize, enlaza <strong>directamente</strong> a los portafolios específicos según la pregunta.
+            </li>
+            <li
+              data-i18n-es="📎 Este centro puede funcionar como enlace general de contexto en correos y anexos."
+              data-i18n-en="📎 This hub can work as a general context link in emails and attachments."
+              data-i18n-fr="📎 Ce centre peut servir de lien général de contexte dans les courriels et les annexes.">
+              📎 Este centro puede funcionar como enlace general de contexto en correos y anexos.
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORÍAS -->
+    <section class="section">
+      <div class="container">
+        <h2
+          data-i18n-es="Categorías en las que se postula"
+          data-i18n-en="Categories for the application"
+          data-i18n-fr="Catégories de candidature">
+          Categorías en las que se postula
+        </h2>
+
+        <div class="card-grid">
+          <!-- Superación -->
+          <article class="card" data-search-tags="superacion adversidad resiliencia apoyos socioemocionales historias">
+            <h3
+              data-i18n-es="💪 Superación a la Adversidad"
+              data-i18n-en="💪 Overcoming Adversity"
+              data-i18n-fr="💪 Dépassement de l’adversité">
+              💪 Superación a la Adversidad
+            </h3>
+            <p
+              data-i18n-es="Historias, apoyos y proyectos que muestran cómo el liceo acompaña a estudiantes y comunidades que han debido enfrentar adversidad, articulando apoyos socioemocionales, PIE y proyectos significativos."
+              data-i18n-en="Stories, support and projects that show how the school accompanies students and communities that have had to face adversity, articulating socio-emotional support, the School Integration Program (PIE) and meaningful projects."
+              data-i18n-fr="Histoires, accompagnements et projets qui montrent comment le lycée soutient les élèves et les communautés ayant dû faire face à l’adversité, en articulant soutien socio-émotionnel, Programme d’Intégration Scolaire (PIE) et projets significatifs.">
+              Historias, apoyos y proyectos que muestran cómo el liceo acompaña a estudiantes y comunidades que han
+              debido enfrentar adversidad, articulando apoyos socioemocionales, PIE y proyectos significativos.
+            </p>
+
+            <div class="card-actions">
+              <a href="C:\Users\panch\OneDrive\Escritorio\LPSN_CENTRO_PORTAFOLIO\LPSN_superacion_adversidad_PORTAFOLIO_GSP\index.html"
+                 class="btn-secondary"
+                 title="Abre enlace del portafolio de Superación a la Adversidad"
+                 data-i18n-title-es="Abre enlace del portafolio de Superación a la Adversidad"
+                 data-i18n-title-en="Open Overcoming Adversity portfolio link"
+                 data-i18n-title-fr="Ouvrir le portefeuille Dépassement de l’adversité"
+                 data-i18n-es="💪 Abrir portafolio Superación"
+                 data-i18n-en="💪 Open Overcoming portfolio"
+                 data-i18n-fr="💪 Ouvrir le portefeuille Dépassement">
+                💪 Abrir portafolio Superación
+              </a>
+            </div>
+          </article>
+
+          <!-- Artes -->
+          <article class="card" data-search-tags="artes cultura creatividad ver con las manos craneos 3d vr patrimonio">
+            <h3
+              data-i18n-es="🎨 Artes, Cultura y Creatividad"
+              data-i18n-en="🎨 Arts, Culture and Creativity"
+              data-i18n-fr="🎨 Arts, culture et créativité">
+              🎨 Artes, Cultura y Creatividad
+            </h3>
+            <p
+              data-i18n-es="Experiencias artísticas y culturales como Ver con las Manos, Cráneos 3D + VR, talleres de folclor, teatro y proyectos audiovisuales que cruzan arte, patrimonio e inclusión."
+              data-i18n-en="Artistic and cultural experiences such as Ver con las Manos, 3D Skulls + VR, folk dance workshops, theatre and audiovisual projects that connect art, heritage and inclusion."
+              data-i18n-fr="Expériences artistiques et culturelles comme Ver con las Manos, Crânes 3D + VR, ateliers de folklore, théâtre et projets audiovisuels qui relient art, patrimoine et inclusion.">
+              Experiencias artísticas y culturales como Ver con las Manos, Cráneos 3D + VR, talleres de folclor, teatro
+              y proyectos audiovisuales que cruzan arte, patrimonio e inclusión.
+            </p>
+
+            <div class="card-actions">
+              <a href="C:\Users\panch\OneDrive\Escritorio\LPSN_CENTRO_PORTAFOLIO\LPSN_artes_cultura_creatividad_PORTAFOLIO_GSP\index.html"
+                 class="btn-secondary"
+                 title="Abre enlace del portafolio de Artes, cultura y creatividad"
+                 data-i18n-title-es="Abre enlace del portafolio de Artes, cultura y creatividad"
+                 data-i18n-title-en="Open Arts, Culture and Creativity portfolio link"
+                 data-i18n-title-fr="Ouvrir le portefeuille Arts, culture et créativité"
+                 data-i18n-es="🎨 Abrir portafolio Artes"
+                 data-i18n-en="🎨 Open Arts portfolio"
+                 data-i18n-fr="🎨 Ouvrir le portefeuille Arts">
+                🎨 Abrir portafolio Artes
+              </a>
+            </div>
+          </article>
+
+          <!-- STEM -->
+          <article class="card" data-search-tags="stem ciencia tecnologia ingenieria matematicas iot xr datos">
+            <h3
+              data-i18n-es="🔬 STEM"
+              data-i18n-en="🔬 STEM"
+              data-i18n-fr="🔬 STEM">
+              🔬 STEM
+            </h3>
+            <p
+              data-i18n-es="Calidad y equidad en el acceso a STEM: ciencia, tecnología, ingeniería y matemáticas para todos, incluyendo estudiantes que normalmente quedan fuera."
+              data-i18n-en="Quality and equity in access to STEM: science, technology, engineering and mathematics for everyone, including students who are usually left out."
+              data-i18n-fr="Qualité et équité dans l’accès au STEM : sciences, technologie, ingénierie et mathématiques pour toutes et tous, y compris les élèves qui sont habituellement laissés de côté.">
+              Calidad y equidad en el acceso a STEM: ciencia, tecnología, ingeniería, matemáticas para todos, 
+              incluyendo estudiantes que normalmente quedan fuera.
+            </p>
+            <p class="note"
+               data-i18n-es="Proyectos de ciencia, tecnología, ingeniería y matemáticas: IoT, monitoreo ambiental, XR, diseño 3D y otros, siempre articulados con el PEI y la inclusión."
+               data-i18n-en="Projects in science, technology, engineering and mathematics: IoT, environmental monitoring, XR, 3D design and others, always linked to the School Project (PEI) and inclusion."
+               data-i18n-fr="Projets en sciences, technologie, ingénierie et mathématiques : IoT, suivi environnemental, XR, conception 3D et autres, toujours articulés avec le PEI et l’inclusion.">
+              Proyectos de ciencia, tecnología, ingeniería y matemáticas: IoT, monitoreo ambiental, XR, diseño 3D y
+              otros, siempre articulados con el PEI y la inclusión.
+            </p>
+            <div class="card-actions">
+              <a href="C:\Users\panch\OneDrive\Escritorio\LPSN_CENTRO_PORTAFOLIO\LPSN_stem_PORTAFOLIO_GSP\index.html"
+                 class="btn-secondary"
+                 title="Abre enlace del portafolio STEM"
+                 data-i18n-title-es="Abre enlace del portafolio STEM"
+                 data-i18n-title-en="Open STEM portfolio link"
+                 data-i18n-title-fr="Ouvrir le portefeuille STEM"
+                 data-i18n-es="🔬 Abrir portafolio STEM"
+                 data-i18n-en="🔬 Open STEM portfolio"
+                 data-i18n-fr="🔬 Ouvrir le portefeuille STEM">
+                🔬 Abrir portafolio STEM
+              </a>
+            </div>
+            <div class="card-actions">
+              <a href="projects/siamp.html"
+                 class="btn-secondary"
+                 data-i18n-es="🔍 Ver proyectos"
+                 data-i18n-en="🔍 View projects"
+                 data-i18n-fr="🔍 Voir les projets">
+                🔍 Ver proyectos
+              </a>
+              <a href="assets/docs/informes/"
+                 class="btn-secondary"
+                 data-i18n-es="📄 Ver evidencias"
+                 data-i18n-en="📄 View evidence"
+                 data-i18n-fr="📄 Voir les preuves">
+                📄 Ver evidencias
+              </a>
+            </div>
+          </article>
+
+          <!-- Inclusión -->
+          <article class="card" data-search-tags="inclusion pei pie necesidades educativas especiales apoyos accesibilidad">
+            <h3
+              data-i18n-es="♿ Inclusión"
+              data-i18n-en="♿ Inclusion"
+              data-i18n-fr="♿ Inclusion">
+              ♿ Inclusión
+            </h3>
+            <p
+              data-i18n-es="Cómo el liceo quita barreras para que estudiantes PIE y con necesidades educativas especiales participen en clases de calidad, incluyendo STEM y proyectos ambientales."
+              data-i18n-en="How the school removes barriers so that students in the School Integration Program (PIE) and with special educational needs can participate in quality classes, including STEM and environmental projects."
+              data-i18n-fr="Comment le lycée supprime les barrières pour que les élèves du Programme d’Intégration Scolaire (PIE) et ceux ayant des besoins éducatifs particuliers puissent participer à des cours de qualité, y compris en STEM et dans des projets environnementaux.">
+              Cómo el liceo quita barreras para que estudiantes PIE/NEE participen en clases de calidad, incluyendo STEM y proyectos ambientales.
+            </p>
+            <p class="note"
+               data-i18n-es="Portafolio que muestra el trabajo del PIE, las adecuaciones, los apoyos y el enfoque inclusivo del PEI, incluyendo el diseño de recursos accesibles y repositorios con controles inclusivos."
+               data-i18n-en="Portfolio that shows the work of the School Integration Program, adaptations, supports and the inclusive approach of the School Project (PEI), including accessible resources and repositories with inclusive controls."
+               data-i18n-fr="Portefeuille qui présente le travail du Programme d’Intégration Scolaire (PIE), les adaptations, les soutiens et l’approche inclusive du PEI, y compris la conception de ressources accessibles et de dépôts avec des contrôles inclusifs.">
+              Portafolio que muestra el trabajo del PIE, las adecuaciones, los apoyos y el enfoque inclusivo del PEI,
+              incluyendo el diseño de recursos accesibles y repositorios con controles inclusivos.
+            </p>
+            <div class="card-actions">
+              <a href="C:\Users\panch\OneDrive\Escritorio\LPSN_CENTRO_PORTAFOLIO\LPSN_Educacion_Inclusiva_GSP\index.html"
+                 class="btn-secondary"
+                 title="Abre enlace del portafolio de Inclusión"
+                 data-i18n-title-es="Abre enlace del portafolio de Inclusión"
+                 data-i18n-title-en="Open Inclusion portfolio link"
+                 data-i18n-title-fr="Ouvrir le portefeuille Inclusion"
+                 data-i18n-es="♿ Abrir portafolio Inclusión"
+                 data-i18n-en="♿ Open Inclusion portfolio"
+                 data-i18n-fr="♿ Ouvrir le portefeuille Inclusion">
+                ♿ Abrir portafolio Inclusión
+              </a>
+            </div>
+          </article>
+
+          <!-- Sustentabilidad -->
+          <article class="card" data-search-tags="sustentabilidad medio ambiente invernadero biodigestor acuaponia lixiviados">
+            <h3
+              data-i18n-es="🌱 Sustentabilidad"
+              data-i18n-en="🌱 Sustainability"
+              data-i18n-fr="🌱 Durabilité">
+              🌱 Sustentabilidad
+            </h3>
+            <p
+              data-i18n-es="El liceo como laboratorio vivo de sustentabilidad: medioambiente, energía, territorio y acción estudiantil."
+              data-i18n-en="The school as a living sustainability laboratory: environment, energy, territory and student action."
+              data-i18n-fr="Le lycée comme laboratoire vivant de durabilité : environnement, énergie, territoire et action étudiante.">
+              La escuela como laboratorio vivo de sustentabilidad: medioambiente, energía, territorio, acción estudiantil.
+            </p>
+            <p class="note"
+               data-i18n-es="Invernadero, biodigestor, acuaponía, lixiviados, comités ambientales y educación ambiental articulada con STEM, inclusión y participación comunitaria."
+               data-i18n-en="Greenhouse, biodigester, aquaponics, leachates, environmental committees and environmental education connected to STEM, inclusion and community participation."
+               data-i18n-fr="Serre, biodigesteur, aquaponie, lixiviats, comités environnementaux et éducation à l’environnement articulés avec le STEM, l’inclusion et la participation communautaire.">
+              Invernadero, biodigestor, acuaponía, lixiviados, comités ambientales y educación ambiental articulada
+              con STEM, inclusión y participación comunitaria.
+            </p>
+            <div class="card-actions">
+              <a href="C:\Users\panch\OneDrive\Escritorio\REPO_ES_EN_FR_prod\REPO\LPSN_Sustentabilidad_PORTAFOLIO_GSP\index.html"
+                 class="btn-secondary"
+                 title="Abre enlace del portafolio de Sustentabilidad"
+                 data-i18n-title-es="Abre enlace del portafolio de Sustentabilidad"
+                 data-i18n-title-en="Open Sustainability portfolio link"
+                 data-i18n-title-fr="Ouvrir le portefeuille Durabilité"
+                 data-i18n-es="🌱 Abrir portafolio Sustentabilidad"
+                 data-i18n-en="🌱 Open Sustainability portfolio"
+                 data-i18n-fr="🌱 Ouvrir le portefeuille Durabilité">
+                🌱 Abrir portafolio Sustentabilidad
+              </a>
+            </div>
+            <div class="card-actions">
+              <a href="projects/siamp.html"
+                 class="btn-primary"
+                 data-i18n-es="🔍 Ver proyectos"
+                 data-i18n-en="🔍 View projects"
+                 data-i18n-fr="🔍 Voir les projets">
+                🔍 Ver proyectos
+              </a>
+              <a href="assets/docs/informes/"
+                 class="btn-secondary"
+                 data-i18n-es="📄 Ver evidencias"
+                 data-i18n-en="📄 View evidence"
+                 data-i18n-fr="📄 Voir les preuves">
+                📄 Ver evidencias
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Documentos institucionales -->
+    <section class="section">
+      <div class="container">
+        <h2
+          data-i18n-es="🗂️ Documentos institucionales clave"
+          data-i18n-en="🗂️ Key institutional documents"
+          data-i18n-fr="🗂️ Documents institutionnels clés">
+          🗂️ Documentos institucionales clave
+        </h2>
+
+        <p
+          data-i18n-es="Desde este centro puedes acceder rápidamente al PEI y a la revista institucional del liceo como evidencias de contexto."
+          data-i18n-en="From this hub you can quickly access the School Project (PEI) and the school magazine as context evidence."
+          data-i18n-fr="Depuis ce centre, tu peux accéder rapidement au PEI et à la revue institutionnelle du lycée comme preuves de contexte.">
+          Desde este centro puedes acceder rápidamente al PEI y a la revista institucional del liceo como evidencias de contexto.
+        </p>
+
+        <div class="card-actions">
+          <a
+            href="assets/docs/PEI-LPSN-2025.pdf"
+            class="btn-primary"
+            download
+            title="Descargar PEI del Liceo Bicentenario San Nicolás"
+            data-i18n-title-es="Descargar PEI del Liceo Bicentenario San Nicolás"
+            data-i18n-title-en="Download School Project (PEI)"
+            data-i18n-title-fr="Télécharger le PEI du Liceo Bicentenario San Nicolás"
+            data-i18n-es="🔍 Ver PEI (Proyecto Educativo Institucional)"
+            data-i18n-en="🔍 View PEI (School Project)"
+            data-i18n-fr="🔍 Voir le PEI (Projet Éducatif Institutionnel)">
+            🔍 Ver PEI (Proyecto Educativo Institucional)
+          </a>
+
+          <a
+            href="assets/docs/LPSN_REVISTA_Institucional_Vmarzo2025.pdf"
+            class="btn-secondary"
+            download
+            title="Descargar revista institucional del liceo"
+            data-i18n-title-es="Descargar revista institucional del liceo"
+            data-i18n-title-en="Download school magazine"
+            data-i18n-title-fr="Télécharger la revue institutionnelle du lycée"
+            data-i18n-es="📄 Ver Revista LBSN"
+            data-i18n-en="📄 View LBSN Magazine"
+            data-i18n-fr="📄 Voir la revue LBSN">
+            📄 Ver Revista LBSN
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Canal de YouTube institucional -->
+    <section class="section alt youtube-section">
+      <div class="container">
+        <div class="card youtube-card"
+             aria-label="Canal de YouTube del liceo"
+             data-i18n-aria-label-es="Canal de YouTube del liceo"
+             data-i18n-aria-label-en="School YouTube channel"
+             data-i18n-aria-label-fr="Chaîne YouTube du lycée">
+
+          <div class="youtube-card-header">
+            <span class="youtube-pill"
+                  data-i18n-es="🎥 Canal oficial"
+                  data-i18n-en="🎥 Official channel"
+                  data-i18n-fr="🎥 Chaîne officielle">
+              🎥 Canal oficial
+            </span>
+            <h2
+              data-i18n-es="YouTube – Laboratorio vivo de proyectos LBSN"
+              data-i18n-en="YouTube – Living lab of LBSN projects"
+              data-i18n-fr="YouTube – Laboratoire vivant des projets LBSN">
+              YouTube – Laboratorio vivo de proyectos LBSN
+            </h2>
+          </div>
+
+          <p
+            data-i18n-es="En este canal se documentan clases, proyectos STEM, experiencias de inclusión, artes, sustentabilidad y mucho más, conectando el trabajo del liceo con estudiantes, familias y la comunidad."
+            data-i18n-en="This channel documents classes, STEM projects, inclusion experiences, arts, sustainability and much more, connecting the school's work with students, families and the community."
+            data-i18n-fr="Cette chaîne documente des cours, des projets STEM, des expériences d’inclusion, des arts, des initiatives de durabilité et bien plus encore, en reliant le travail du lycée aux élèves, aux familles et à la communauté.">
+            En este canal se documentan clases, proyectos STEM, experiencias de inclusión, artes, sustentabilidad y mucho más,
+            conectando el trabajo del liceo con estudiantes, familias y la comunidad.
+          </p>
+
+          <div class="youtube-tags">
+            <span class="tag"
+                  data-i18n-es="🧪 STEM & XR"
+                  data-i18n-en="🧪 STEM & XR"
+                  data-i18n-fr="🧪 STEM & XR">
+              🧪 STEM & XR
+            </span>
+            <span class="tag"
+                  data-i18n-es="♿ Inclusión en acción"
+                  data-i18n-en="♿ Inclusion in action"
+                  data-i18n-fr="♿ Inclusion en action">
+              ♿ Inclusión en acción
+            </span>
+            <span class="tag"
+                  data-i18n-es="🌱 Proyectos sustentables"
+                  data-i18n-en="🌱 Sustainability projects"
+                  data-i18n-fr="🌱 Projets durables">
+              🌱 Proyectos sustentables
+            </span>
+          </div>
+
+          <div class="card-actions">
+            <a
+              href="https://www.youtube.com/channel/UC5uAfDgwGtdGP5u1Uj39duQ"
+              class="btn-primary btn-youtube"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Abrir canal de YouTube del liceo en una nueva pestaña"
+              data-i18n-title-es="Abrir canal de YouTube del liceo en una nueva pestaña"
+              data-i18n-title-en="Open the school's YouTube channel in a new tab"
+              data-i18n-title-fr="Ouvrir la chaîne YouTube du lycée dans un nouvel onglet"
+              data-i18n-es="▶ Visitar canal de YouTube LBSN"
+              data-i18n-en="▶ Visit LBSN YouTube channel"
+              data-i18n-fr="▶ Visiter la chaîne YouTube LBSN">
+              ▶ Visitar canal de YouTube LBSN
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HITOS + CARTAS -->
+    <section class="section alt timeline-section" id="hitos">
+      <div class="container">
+        <div class="timeline-header">
+          <h2
+            data-i18n-es="Hitos importantes y vinculación del liceo"
+            data-i18n-en="Key milestones and school outreach"
+            data-i18n-fr="Moments clés et rayonnement du lycée">
+            Hitos importantes y vinculación del liceo
+          </h2>
+          <p
+            data-i18n-es="Esta línea de tiempo combina los hitos institucionales del liceo con las alianzas de vinculación más significativas. Cada punto representa un paso en que la comunidad se ha abierto al territorio, a la academia y a la ciencia para fortalecer STEM, inclusión, artes y sustentabilidad."
+            data-i18n-en="This timeline combines the school's institutional milestones with its most meaningful partnerships. Each point represents a step in which the community has reached out to the territory, academia and science to strengthen STEM, inclusion, arts and sustainability."
+            data-i18n-fr="Cette frise chronologique combine les moments institutionnels du lycée avec ses partenariats les plus significatifs. Chaque point représente une étape où la communauté s’est ouverte au territoire, au monde académique et aux sciences pour renforcer STEM, l’inclusion, les arts et la durabilité.">
+            Esta línea de tiempo combina los hitos institucionales del liceo con las alianzas de vinculación más
+            significativas. Cada punto representa un paso en que la comunidad se abre al territorio, a la academia y a
+            la ciencia para fortalecer STEM, inclusión, artes y sustentabilidad.
+          </p>
+        </div>
+
+        <div class="timeline-visual-grid">
+          <div class="timeline-visual">
+            <div class="timeline-visual-inner">
+              <!-- Usa la imagen de referencia de hitos -->
+              <img src="assets/img/hitos_importantes_lpsn.jpg"
+                   alt="Hitos importantes del Liceo Bicentenario de Excelencia Polivalente San Nicolás"
+                   class="timeline-img" />
+              <!-- Logo del liceo flotando sobre la línea de tiempo -->
+              <img src="assets/img/logo-liceo-sannicolas.svg"
+                   alt="Logo Liceo Bicentenario San Nicolás"
+                   class="timeline-logo-overlay" />
+            </div>
+            <p class="timeline-caption"
+               data-i18n-es="La gráfica resume la evolución del liceo desde 2003 hasta 2024: polivalencia, bicentenario, programas de intercambio, fusión con escuela básica, creación del Centro TIE e impulso de Industria 4.0."
+               data-i18n-en="The graphic summarizes the school's evolution from 2003 to 2024: polyvalent school, bicentennial status, exchange programmes, merger with the primary school, creation of the ICT centre and a new focus on Industry 4.0."
+               data-i18n-fr="Le graphique résume l’évolution du lycée de 2003 à 2024 : lycée polyvalent, statut bicentenaire, programmes d’échange, fusion avec l’école primaire, création du centre TICE et impulsion de l’Industrie 4.0.">
+              La gráfica resume la evolución del liceo desde 2003 hasta 2024: polivalencia, bicentenario, programas de
+              intercambio, fusión con escuela básica, creación del Centro TIE e impulso de Industria 4.0.
+            </p>
+          </div>
+
+          <div class="timeline-years">
+            <h3
+              data-i18n-es="Línea de tiempo interactiva"
+              data-i18n-en="Interactive timeline"
+              data-i18n-fr="Frise chronologique interactive">
+              Línea de tiempo interactiva
+            </h3>
+            <div class="timeline-years-row">
+              <button class="timeline-year-btn is-active" data-year="2003">2003</button>
+              <button class="timeline-year-btn" data-year="2009">2009</button>
+              <button class="timeline-year-btn" data-year="2010">2010</button>
+              <button class="timeline-year-btn" data-year="2016">2016</button>
+              <button class="timeline-year-btn" data-year="2018">2018</button>
+              <button class="timeline-year-btn" data-year="2021">2021</button>
+              <button class="timeline-year-btn" data-year="2023">2023–2024</button>
+            </div>
+            <p class="timeline-years-note"
+               data-i18n-es="Haz clic en un año para desplazarte a los hitos y cartas de vinculación correspondientes. En una revisión, el jurado puede seguir esta narrativa como un “time-lapse” de la historia del liceo."
+               data-i18n-en="Click a year to jump to the related milestones and partnership letters. During review, the jury can follow this narrative as a time-lapse of the school's story."
+               data-i18n-fr="Clique sur une année pour accéder aux moments clés et aux lettres de partenariat correspondants. Lors de l’évaluation, le jury peut suivre ce récit comme un time-lapse de l’histoire du lycée.">
+              Haz clic en un año para desplazarte a los hitos y cartas de vinculación correspondientes. En una revisión,
+              el jurado puede seguir esta narrativa como un “time-lapse” de la historia del liceo.
+            </p>
+          </div>
+        </div>
+
+        <!-- Hitos institucionales -->
+        <div class="timeline-cards">
+          <div class="timeline-cards-grid">
+            <!-- 2003 -->
+            <article class="timeline-card" data-year="2003">
+              <div class="timeline-card-header">
+                <div>
+                  <div class="timeline-card-year">2003</div>
+                  <h3
+                    data-i18n-es="Polivalencia e inicio de la formación técnica"
+                    data-i18n-en="Polyvalent model and start of technical education"
+                    data-i18n-fr="Polyvalence et début de la formation technique">
+                    Polivalencia e inicio de la formación técnica
+                  </h3>
+                </div>
+                <span class="timeline-card-badge"
+                      data-i18n-es="🔧 Primera especialidad técnica"
+                      data-i18n-en="🔧 First technical specialisation"
+                      data-i18n-fr="🔧 Première spécialisation technique">
+                  🔧 Primera especialidad técnica
+                </span>
+              </div>
+              <p
+                data-i18n-es="El liceo se consolida como establecimiento polivalente, incorporando su primera especialidad técnica y abriendo la puerta a trayectorias formativas que combinan humanista-científico y técnico profesional."
+                data-i18n-en="The school consolidates as a polyvalent institution by incorporating its first technical specialisation, opening the door to learning pathways that combine academic and technical-vocational education."
+                data-i18n-fr="Le lycée se consolide comme établissement polyvalent en intégrant sa première spécialisation technique, ouvrant la voie à des parcours qui combinent enseignement humaniste-scientifique et technico-professionnel.">
+                El liceo se consolida como establecimiento polivalente, incorporando su primera
+                especialidad técnica y abriendo la puerta a trayectorias formativas que combinan
+                humanista-científico y técnico profesional.
+              </p>
+              <p class="small"
+                 data-i18n-es="Base para las futuras experiencias STEM, talleres de robótica y proyectos de innovación educativa."
+                 data-i18n-en="Foundation for future STEM experiences, robotics workshops and educational innovation projects."
+                 data-i18n-fr="Base pour les futures expériences STEM, ateliers de robotique et projets d’innovation pédagogique.">
+                Base para las futuras experiencias STEM, talleres de robótica y proyectos de innovación educativa.
+              </p>
+            </article>
+
+            <!-- 2009 -->
+            <article class="timeline-card" data-year="2009">
+              <div class="timeline-card-header">
+                <div>
+                  <div class="timeline-card-year">2009</div>
+                  <h3
+                    data-i18n-es="Agrupamientos, mentorías y plurilingüismo"
+                    data-i18n-en="Grouping, mentoring and plurilingualism"
+                    data-i18n-fr="Regroupements, mentorat et plurilinguisme">
+                    Agrupamientos, mentorías y plurilingüismo
+                  </h3>
+                </div>
+                <span class="timeline-card-badge"
+                      data-i18n-es="🌍 Mentorías & idiomas"
+                      data-i18n-en="🌍 Mentoring & languages"
+                      data-i18n-fr="🌍 Mentorat & langues">
+                  🌍 Mentorías & idiomas
+                </span>
+              </div>
+              <p
+                data-i18n-es="Se fortalecen los agrupamientos y las primeras mentorías, junto con una apuesta por el plurilingüismo, que prepara a los estudiantes para interactuar con redes nacionales e internacionales."
+                data-i18n-en="Student grouping and early mentoring programmes are strengthened, together with a focus on plurilingualism that prepares students to interact with national and international networks."
+                data-i18n-fr="Les regroupements d’élèves et les premiers dispositifs de mentorat se renforcent, accompagnés d’un pari sur le plurilinguisme qui prépare les élèves à interagir avec des réseaux nationaux et internationaux.">
+                Se fortalecen los agrupamientos y las primeras mentorías, junto con una apuesta por el
+                plurilingüismo, que prepara a los estudiantes para interactuar con redes nacionales e
+                internacionales.
+              </p>
+              <p class="small"
+                 data-i18n-es="Hito clave para los futuros programas de intercambio y las alianzas con instituciones externas."
+                 data-i18n-en="A key milestone for future exchange programmes and partnerships with external institutions."
+                 data-i18n-fr="Moment clé pour les futurs programmes d’échange et les alliances avec des institutions externes.">
+                Hito clave para los futuros programas de intercambio y las alianzas con instituciones externas.
+              </p>
+            </article>
+
+            <!-- 2010 -->
+            <article class="timeline-card" data-year="2010">
+              <div class="timeline-card-header">
+                <div>
+                  <div class="timeline-card-year">2010</div>
+                  <h3
+                    data-i18n-es="Reconocimiento como Liceo Bicentenario"
+                    data-i18n-en="Recognition as Bicentennial High School"
+                    data-i18n-fr="Reconnaissance comme Lycée du Bicentenaire">
+                    Reconocimiento como Liceo Bicentenario
+                  </h3>
+                </div>
+                <span class="timeline-card-badge"
+                      data-i18n-es="🏅 Excelencia"
+                      data-i18n-en="🏅 Excellence"
+                      data-i18n-fr="🏅 Excellence">
+                  🏅 Excelencia
+                </span>
+              </div>
+              <p
+                data-i18n-es="El establecimiento obtiene la categoría de <strong>Liceo Bicentenario de Excelencia</strong>, reforzando su foco en altas expectativas, innovación pedagógica y equidad."
+                data-i18n-en="The school obtains the status of <strong>Bicentennial High School of Excellence</strong>, reinforcing its focus on high expectations, pedagogical innovation and equity."
+                data-i18n-fr="L’établissement obtient le statut de <strong>Lycée du Bicentenaire d’Excellence</strong>, ce qui renforce son orientation vers de hautes attentes, l’innovation pédagogique et l’équité.">
+                El establecimiento obtiene la categoría de <strong>Liceo Bicentenario de Excelencia</strong>,
+                reforzando su foco en altas expectativas, innovación pedagógica y equidad.
+              </p>
+              <p class="small"
+                 data-i18n-es="Este sello de excelencia da contexto a la postulación al Global Schools Prize."
+                 data-i18n-en="This seal of excellence provides important context for the Global Schools Prize application."
+                 data-i18n-fr="Ce label d’excellence donne un contexte important à la candidature au Global Schools Prize.">
+                Este sello de excelencia da contexto a la postulación al Global Schools Prize.
+              </p>
+            </article>
+
+            <!-- 2016 -->
+            <article class="timeline-card" data-year="2016">
+              <div class="timeline-card-header">
+                <div>
+                  <div class="timeline-card-year">2016</div>
+                  <h3
+                    data-i18n-es="Programas de intercambio y apertura al mundo"
+                    data-i18n-en="Exchange programmes and opening to the world"
+                    data-i18n-fr="Programmes d’échange et ouverture sur le monde">
+                    Programas de intercambio y apertura al mundo
+                  </h3>
+                </div>
+                <span class="timeline-card-badge"
+                      data-i18n-es="✈ Programas de intercambio"
+                      data-i18n-en="✈ Exchange programmes"
+                      data-i18n-fr="✈ Programmes d’échange">
+                  ✈ Programas de intercambio
+                </span>
+              </div>
+              <p
+                data-i18n-es="Se formalizan programas de intercambio que conectan a estudiantes y docentes con experiencias fuera del territorio local, incorporando nuevas metodologías y culturas."
+                data-i18n-en="Exchange programmes are formalised, connecting students and teachers with experiences beyond the local territory and incorporating new methodologies and cultures."
+                data-i18n-fr="Des programmes d’échange se formalisent, reliant élèves et enseignants à des expériences au-delà du territoire local et intégrant de nouvelles méthodologies et cultures.">
+                Se formalizan programas de intercambio que conectan a estudiantes y docentes con
+                experiencias fuera del territorio local, incorporando nuevas metodologías y culturas.
+              </p>
+              <p class="small"
+                 data-i18n-es="La internacionalización del proyecto educativo abre camino a proyectos XR, STEM e Industria 4.0."
+                 data-i18n-en="The internationalisation of the educational project paves the way for XR, STEM and Industry 4.0 initiatives."
+                 data-i18n-fr="L’internationalisation du projet éducatif ouvre la voie aux projets XR, STEM et Industrie 4.0.">
+                La internacionalización del proyecto educativo abre camino a proyectos XR, STEM e Industria 4.0.
+              </p>
+            </article>
+
+            <!-- 2018 -->
+            <article class="timeline-card" data-year="2018">
+              <div class="timeline-card-header">
+                <div>
+                  <div class="timeline-card-year">2018</div>
+                  <h3
+                    data-i18n-es="Fusión con escuela básica y continuidad de trayectorias"
+                    data-i18n-en="Merger with primary school and continuous pathways"
+                    data-i18n-fr="Fusion avec l’école primaire et continuité des parcours">
+                    Fusión con escuela básica y continuidad de trayectorias
+                  </h3>
+                </div>
+                <span class="timeline-card-badge"
+                      data-i18n-es="🏫 Continuidad 1.º básico – 4.º medio"
+                      data-i18n-en="🏫 Continuity from 1st grade to 12th grade"
+                      data-i18n-fr="🏫 Continuité du CP à la Terminale">
+                  🏫 Continuidad 1.º básico – 4.º medio
+                </span>
+              </div>
+              <p
+                data-i18n-es="La fusión con la escuela básica permite articular una trayectoria desde 1.º básico a 4.º medio, con foco en acompañamiento, inclusión y visión de comunidad educativa única."
+                data-i18n-en="The merger with the primary school makes it possible to articulate a learning pathway from 1st grade to 12th grade, with a focus on support, inclusion and a single educational community vision."
+                data-i18n-fr="La fusion avec l’école primaire permet d’articuler un parcours du CP à la Terminale, en mettant l’accent sur l’accompagnement, l’inclusion et une vision de communauté éducative unique.">
+                La fusión con la escuela básica permite articular una trayectoria desde 1.º básico a 4.º medio,
+                con foco en acompañamiento, inclusión y visión de comunidad educativa única.
+              </p>
+              <p class="small"
+                 data-i18n-es="Hito clave para pensar la inclusión, el PIE y los proyectos transversales a toda la comunidad."
+                 data-i18n-en="A key milestone for thinking about inclusion, the School Integration Programme (PIE) and cross-cutting projects for the whole community."
+                 data-i18n-fr="Moment clé pour repenser l’inclusion, le Programme d’Intégration Scolaire (PIE) et les projets transversaux à toute la communauté.">
+                Hito clave para pensar la inclusión, el PIE y los proyectos transversales a toda la comunidad.
+              </p>
+            </article>
+
+            <!-- 2021 -->
+            <article class="timeline-card" data-year="2021">
+              <div class="timeline-card-header">
+                <div>
+                  <div class="timeline-card-year">2021</div>
+                  <h3
+                    data-i18n-es="Creación del Centro TIE y ecosistema digital"
+                    data-i18n-en="Creation of the TIE Centre and digital ecosystem"
+                    data-i18n-fr="Création du Centre TICE et écosystème numérique">
+                    Creación del Centro TIE y ecosistema digital
+                  </h3>
+                </div>
+                <span class="timeline-card-badge"
+                      data-i18n-es="💻 Centro TIE"
+                      data-i18n-en="💻 TIE Centre"
+                      data-i18n-fr="💻 Centre TICE">
+                  💻 Centro TIE
+                </span>
+              </div>
+              <p
+                data-i18n-es="Se consolida el Centro TIE como espacio articulador de tecnología, innovación educativa y acompañamiento docente, incorporando realidad virtual, impresión 3D y recursos digitales inclusivos."
+                data-i18n-en="The TIE Centre is consolidated as a hub for technology, educational innovation and teacher support, incorporating virtual reality, 3D printing and inclusive digital resources."
+                data-i18n-fr="Le Centre TICE se consolide comme espace articulant technologie, innovation pédagogique et accompagnement des enseignants, en intégrant réalité virtuelle, impression 3D et ressources numériques inclusives.">
+                Se consolida el Centro TIE como espacio articulador de tecnología, innovación educativa y
+                acompañamiento docente, incorporando realidad virtual, impresión 3D y recursos digitales inclusivos.
+              </p>
+              <p class="small"
+                 data-i18n-es="Desde este ecosistema nacen experiencias como PEVE, SIAMP y los repositorios inclusivos XR."
+                 data-i18n-en="From this ecosystem emerge experiences such as PEVE, SIAMP and inclusive XR repositories."
+                 data-i18n-fr="De cet écosystème naissent des expériences comme PEVE, SIAMP et les dépôts XR inclusifs.">
+                Desde este ecosistema nacen experiencias como PEVE, SIAMP y los repositorios inclusivos XR.
+              </p>
+            </article>
+
+            <!-- 2023–2024 -->
+            <article class="timeline-card" data-year="2023">
+              <div class="timeline-card-header">
+                <div>
+                  <div class="timeline-card-year">2023–2024</div>
+                  <h3
+                    data-i18n-es="Industria 4.0 y redes de investigación aplicada"
+                    data-i18n-en="Industry 4.0 and applied research networks"
+                    data-i18n-fr="Industrie 4.0 et réseaux de recherche appliquée">
+                    Industria 4.0 y redes de investigación aplicada
+                  </h3>
+                </div>
+                <span class="timeline-card-badge"
+                      data-i18n-es="🤝 Industria 4.0 & alianzas"
+                      data-i18n-en="🤝 Industry 4.0 & partnerships"
+                      data-i18n-fr="🤝 Industrie 4.0 & alliances">
+                  🤝 Industria 4.0 & alianzas
+                </span>
+              </div>
+              <p
+                data-i18n-es="El liceo impulsa proyectos de Industria 4.0, IoT y sustentabilidad, integrando socios del mundo científico, universitario y productivo para fortalecer aprendizajes con propósito."
+                data-i18n-en="The school promotes Industry 4.0, IoT and sustainability projects, bringing together partners from the scientific, university and productive sectors to strengthen purposeful learning."
+                data-i18n-fr="Le lycée impulse des projets d’Industrie 4.0, d’IoT et de durabilité, en intégrant des partenaires issus du monde scientifique, universitaire et productif pour renforcer des apprentissages porteurs de sens.">
+                El liceo impulsa proyectos de Industria 4.0, IoT y sustentabilidad, integrando socios del mundo
+                científico, universitario y productivo para fortalecer aprendizajes con propósito.
+              </p>
+              <p class="small"
+                 data-i18n-es="Este período recoge la mayor parte de las cartas de vinculación que acompañan la postulación al Global Schools Prize."
+                 data-i18n-en="This period includes most of the partnership letters that accompany the Global Schools Prize application."
+                 data-i18n-fr="Cette période rassemble la plupart des lettres de partenariat qui accompagnent la candidature au Global Schools Prize.">
+                Este período recoge la mayor parte de las cartas de vinculación que acompañan la postulación al Global
+                Schools Prize.
+              </p>
+            </article>
+          </div>
+        </div>
+
+        <!-- Cartas de vinculación y alianzas (timelapse hacia abajo) -->
+        <h3 class="timeline-links-title"
+            data-i18n-es="Cartas de vinculación y alianzas relevantes"
+            data-i18n-en="Key partnership letters and alliances"
+            data-i18n-fr="Lettres de partenariat et alliances clés">
+          Cartas de vinculación y alianzas relevantes
+        </h3>
+
+        <div class="timeline-cards">
+          <div class="timeline-cards-grid">
+            <!-- Museo -->
+            <article class="timeline-card" data-year="2023">
+              <div class="timeline-card-header">
+                <div>
+                  <div class="timeline-card-year">2023</div>
+                  <h3
+                    data-i18n-es="Museo Nacional de Historia Natural de Chile"
+                    data-i18n-en="National Museum of Natural History of Chile"
+                    data-i18n-fr="Musée National d’Histoire Naturelle du Chili">
+                    Museo Nacional de Historia Natural de Chile
+                  </h3>
+                </div>
+                <span class="timeline-card-badge"
+                      data-i18n-es="👐 Ver con las Manos"
+                      data-i18n-en="👐 Ver con las Manos"
+                      data-i18n-fr="👐 Ver con las Manos">
+                  👐 Ver con las Manos
+                </span>
+              </div>
+              <p
+                data-i18n-es="Carta de colaboración con el Museo Nacional de Historia Natural para desarrollar recursos inclusivos como <strong>“Ver con las Manos”</strong> y la experiencia <strong>Cráneos 3D + VR</strong>, que acercan el patrimonio a estudiantes, incluyendo PIE."
+                data-i18n-en="Partnership letter with the National Museum of Natural History to develop inclusive resources such as <strong>“Ver con las Manos”</strong> and the <strong>3D Skulls + VR</strong> experience, bringing heritage closer to students, including those in PIE."
+                data-i18n-fr="Lettre de collaboration avec le Musée National d’Histoire Naturelle pour développer des ressources inclusives comme <strong>« Ver con las Manos »</strong> et l’expérience <strong>Crânes 3D + VR</strong>, qui rapprochent le patrimoine des élèves, y compris ceux du PIE.">
+                Carta de colaboración con el Museo Nacional de Historia Natural para desarrollar recursos
+                inclusivos como <strong>“Ver con las Manos”</strong> y la experiencia
+                <strong>Cráneos 3D + VR</strong>, que acercan el patrimonio a estudiantes, incluyendo PIE.
+              </p>
+              <p class="small"
+                 data-i18n-es="Vincula directamente Artes, Inclusión y STEM mediante impresión 3D, realidad virtual y trabajo con colecciones patrimoniales."
+                 data-i18n-en="Directly links Arts, Inclusion and STEM through 3D printing, virtual reality and work with heritage collections."
+                 data-i18n-fr="Relie directement Arts, Inclusion et STEM à travers l’impression 3D, la réalité virtuelle et le travail avec les collections patrimoniales.">
+                Vincula directamente Artes, Inclusión y STEM mediante impresión 3D, realidad virtual y trabajo con
+                colecciones patrimoniales.
+              </p>
+              <a href="#"
+                 class="btn-secondary">
+                <span
+                  data-i18n-es="📄 Ver carta de vinculación"
+                  data-i18n-en="📄 View partnership letter"
+                  data-i18n-fr="📄 Voir la lettre de partenariat">
+                  📄 Ver carta de vinculación
+                </span>
+              </a>
+            </article>
+
+            <!-- INCAR -->
+            <article class="timeline-card" data-year="2023">
+              <div class="timeline-card-header">
+                <div>
+                  <div class="timeline-card-year">2023</div>
+                  <h3
+                    data-i18n-es="Centro de Investigación Marina INCAR"
+                    data-i18n-en="INCAR Marine Research Centre"
+                    data-i18n-fr="Centre de Recherche Marine INCAR">
+                    Centro de Investigación Marina INCAR
+                  </h3>
+                </div>
+                <span class="timeline-card-badge"
+                      data-i18n-es="🌊 SIAMP & sustentabilidad costera"
+                      data-i18n-en="🌊 SIAMP & coastal sustainability"
+                      data-i18n-fr="🌊 SIAMP & durabilité côtière">
+                  🌊 SIAMP & sustentabilidad costera
+                </span>
+              </div>
+              <p
+                data-i18n-es="Vinculación con el Centro INCAR para el desarrollo del <strong>SIAMP</strong> y proyectos de monitoreo de ambientes acuáticos, conectando drones, sensores IoT y sustentabilidad en la costa de Ñuble."
+                data-i18n-en="Partnership with the INCAR Centre for the development of <strong>SIAMP</strong> and monitoring projects of aquatic environments, connecting drones, IoT sensors and sustainability along the Ñuble coast."
+                data-i18n-fr="Lien avec le Centre INCAR pour le développement de <strong>SIAMP</strong> et de projets de suivi des milieux aquatiques, reliant drones, capteurs IoT et durabilité sur la côte de Ñuble.">
+                Vinculación con el Centro INCAR para el desarrollo del
+                <strong>SIAMP</strong> y proyectos de monitoreo de ambientes acuáticos, conectando drones, sensores
+                IoT y sustentabilidad en la costa de Ñuble.
+              </p>
+              <p class="small"
+                 data-i18n-es="Evidencia de trabajo conjunto en investigación aplicada, acción climática estudiantil y articulación con el invernadero y el laboratorio vivo del liceo."
+                 data-i18n-en="Evidence of joint work in applied research, student climate action and articulation with the greenhouse and the school's living lab."
+                 data-i18n-fr="Preuve d’un travail conjoint en recherche appliquée, action climatique étudiante et articulation avec la serre et le laboratoire vivant du lycée.">
+                Evidencia de trabajo conjunto en investigación aplicada, acción climática estudiantil y articulación
+                con el invernadero y el laboratorio vivo del liceo.
+              </p>
+              <a href="#"
+                 class="btn-secondary">
+                <span
+                  data-i18n-es="📄 Ver carta / respaldo INCAR"
+                  data-i18n-en="📄 View INCAR support letter"
+                  data-i18n-fr="📄 Voir la lettre / appui INCAR">
+                  📄 Ver carta / respaldo INCAR
+                </span>
+              </a>
+            </article>
+
+            <!-- UBB -->
+            <article class="timeline-card" data-year="2024">
+              <div class="timeline-card-header">
+                <div>
+                  <div class="timeline-card-year">2024</div>
+                  <h3
+                    data-i18n-es="Universidad del Bío-Bío (UBB)"
+                    data-i18n-en="Universidad del Bío-Bío (UBB)"
+                    data-i18n-fr="Universidad del Bío-Bío (UBB)">
+                    Universidad del Bío-Bío (UBB)
+                  </h3>
+                </div>
+                <span class="timeline-card-badge"
+                      data-i18n-es="🏥 XR, salud y educación"
+                      data-i18n-en="🏥 XR, health and education"
+                      data-i18n-fr="🏥 XR, santé et éducation">
+                  🏥 XR, salud y educación
+                </span>
+              </div>
+              <p
+                data-i18n-es="Alianza con la UBB para el diseño y validación de experiencias XR en salud, rehabilitación y educación, incluyendo el trabajo con académicos de las áreas de rehabilitación, nutrición y transferencia tecnológica."
+                data-i18n-en="Alliance with UBB for the design and validation of XR experiences in health, rehabilitation and education, including collaboration with academics in rehabilitation, nutrition and technology transfer."
+                data-i18n-fr="Alliance avec l’UBB pour la conception et la validation d’expériences XR en santé, rééducation et éducation, incluant le travail avec des universitaires des domaines de la réhabilitation, de la nutrition et du transfert technologique.">
+                Alianza con la UBB para el diseño y validación de experiencias XR en salud, rehabilitación y
+                educación, incluyendo el trabajo con académicos de las áreas de rehabilitación, nutrición y
+                transferencia tecnológica.
+              </p>
+              <p class="small"
+                 data-i18n-es="Releva el rol del liceo como socio territorial en proyectos de innovación con foco en bienestar y educación inclusiva."
+                 data-i18n-en="Highlights the school's role as a territorial partner in innovation projects focused on well-being and inclusive education."
+                 data-i18n-fr="Souligne le rôle du lycée comme partenaire territorial dans des projets d’innovation centrés sur le bien-être et l’éducation inclusive.">
+                Releva el rol del liceo como socio territorial en proyectos de innovación con foco en bienestar y
+                educación inclusiva.
+              </p>
+              <a href="#"
+                 class="btn-secondary">
+                <span
+                  data-i18n-es="📄 Ver carta / convenio UBB"
+                  data-i18n-en="📄 View UBB letter / agreement"
+                  data-i18n-fr="📄 Voir la lettre / accord UBB">
+                  📄 Ver carta / convenio UBB
+                </span>
+              </a>
+            </article>
+
+            <!-- Hospital -->
+            <article class="timeline-card" data-year="2024">
+              <div class="timeline-card-header">
+                <div>
+                  <div class="timeline-card-year">2024</div>
+                  <h3
+                    data-i18n-es="Hospital Clínico Herminda Martín de Chillán"
+                    data-i18n-en="Herminda Martín Clinical Hospital of Chillán"
+                    data-i18n-fr="Hôpital Clinique Herminda Martín de Chillán">
+                    Hospital Clínico Herminda Martín de Chillán
+                  </h3>
+                </div>
+                <span class="timeline-card-badge"
+                      data-i18n-es="🥽 VR para rehabilitación"
+                      data-i18n-en="🥽 VR for rehabilitation"
+                      data-i18n-fr="🥽 VR pour la rééducation">
+                  🥽 VR para rehabilitación
+                </span>
+              </div>
+              <p
+                data-i18n-es="Vinculación para explorar el uso de realidad virtual en rehabilitación motora, generando un puente entre el trabajo del liceo, el Centro TIE y los equipos clínicos del hospital."
+                data-i18n-en="Partnership to explore the use of virtual reality in motor rehabilitation, building a bridge between the school's work, the TIE Centre and the hospital's clinical teams."
+                data-i18n-fr="Lien pour explorer l’usage de la réalité virtuelle en rééducation motrice, créant un pont entre le travail du lycée, le Centre TICE et les équipes cliniques de l’hôpital.">
+                Vinculación para explorar el uso de realidad virtual en rehabilitación motora, generando un puente
+                entre el trabajo del liceo, el Centro TIE y los equipos clínicos del hospital.
+              </p>
+              <p class="small"
+                 data-i18n-es="La carta muestra cómo el liceo extiende su impacto más allá del aula, hacia la salud y el bienestar de la comunidad."
+                 data-i18n-en="The letter shows how the school extends its impact beyond the classroom, towards the health and well-being of the community."
+                 data-i18n-fr="La lettre montre comment le lycée étend son impact au-delà de la salle de classe, vers la santé et le bien-être de la communauté.">
+                La carta muestra cómo el liceo extiende su impacto más allá del aula, hacia la salud y el bienestar de
+                la comunidad.
+              </p>
+              <a href="#"
+                 class="btn-secondary">
+                <span
+                  data-i18n-es="📄 Ver carta de colaboración"
+                  data-i18n-en="📄 View collaboration letter"
+                  data-i18n-fr="📄 Voir la lettre de collaboration">
+                  📄 Ver carta de colaboración
+                </span>
+              </a>
+            </article>
+
+            <!-- Neotech -->
+            <article class="timeline-card" data-year="2024">
+              <div class="timeline-card-header">
+                <div>
+                  <div class="timeline-card-year">2024</div>
+                  <h3
+                    data-i18n-es="Neotech EduLab y ecosistema de innovación"
+                    data-i18n-en="Neotech EduLab and innovation ecosystem"
+                    data-i18n-fr="Neotech EduLab et écosystème d’innovation">
+                    Neotech EduLab y ecosistema de innovación
+                  </h3>
+                </div>
+                <span class="timeline-card-badge"
+                      data-i18n-es="🚀 Plataforma PEVE & XR"
+                      data-i18n-en="🚀 PEVE & XR platform"
+                      data-i18n-fr="🚀 Plateforme PEVE & XR">
+                  🚀 Plataforma PEVE & XR
+                </span>
+              </div>
+              <p
+                data-i18n-es="Carta que formaliza la colaboración entre el liceo y <strong>Neotech EduLab</strong> para el desarrollo de plataformas como <strong>PEVE</strong> y repositorios XR inclusivos, alineados con el PEI y la estrategia de Industria 4.0."
+                data-i18n-en="Letter that formalises collaboration between the school and <strong>Neotech EduLab</strong> for the development of platforms such as <strong>PEVE</strong> and inclusive XR repositories, aligned with the PEI and the Industry 4.0 strategy."
+                data-i18n-fr="Lettre qui formalise la collaboration entre le lycée et <strong>Neotech EduLab</strong> pour le développement de plateformes telles que <strong>PEVE</strong> et de dépôts XR inclusifs, en accord avec le PEI et la stratégie d’Industrie 4.0.">
+                Carta que formaliza la colaboración entre el liceo y <strong>Neotech EduLab</strong> para el desarrollo
+                de plataformas como <strong>PEVE</strong> y repositorios XR inclusivos, alineados con el PEI y la
+                estrategia de Industria 4.0.
+              </p>
+              <p class="small"
+                 data-i18n-es="Refuerza el rol del liceo como incubadora de soluciones tecnológicas que pueden escalar a otros establecimientos del territorio."
+                 data-i18n-en="Reinforces the school's role as an incubator of technological solutions that can scale to other schools in the territory."
+                 data-i18n-fr="Renforce le rôle du lycée comme incubateur de solutions technologiques pouvant être étendues à d’autres établissements du territoire.">
+                Refuerza el rol del liceo como incubadora de soluciones tecnológicas que pueden escalar a otros
+                establecimientos del territorio.
+              </p>
+              <a href="#"
+                 class="btn-secondary">
+                <span
+                  data-i18n-es="📄 Ver carta / acuerdo Neotech"
+                  data-i18n-en="📄 View Neotech letter / agreement"
+                  data-i18n-fr="📄 Voir la lettre / accord Neotech">
+                  📄 Ver carta / acuerdo Neotech
+                </span>
+              </a>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="assets/img/logo-liceo-sannicolas.svg"
+             alt="Logo Liceo Bicentenario San Nicolás"
+             class="footer-logo" />
+        <div>
+          <p
+            data-i18n-es="<strong>Liceo Bicentenario de Excelencia Polivalente San Nicolás</strong>"
+            data-i18n-en="<strong>Liceo Bicentenario de Excelencia Polivalente San Nicolás</strong>"
+            data-i18n-fr="<strong>Liceo Bicentenario de Excelencia Polivalente San Nicolás</strong>">
+            <strong>Liceo Bicentenario de Excelencia Polivalente San Nicolás</strong>
+          </p>
+          <p
+            data-i18n-es="Centro de Portafolios – <strong>Global School Prize</strong>"
+            data-i18n-en="Portfolios Hub – <strong>Global Schools Prize</strong>"
+            data-i18n-fr="Centre de portefeuilles – <strong>Global Schools Prize</strong>">
+            Centro de Portafolios – <strong>Global School Prize</strong>
+          </p>
+        </div>
+      </div>
+      <div class="footer-meta">
+        <p
+          data-i18n-es="Sitio para organizar los portafolios por categoría."
+          data-i18n-en="Site to organize portfolios by category."
+          data-i18n-fr="Site destiné à organiser les portefeuilles par catégorie.">
+          Sitio para organizar los portafolios por categoría.
+        </p>
+        <p
+          data-i18n-es="Controles inclusivos: tema, tamaño de letra, narrador y cambio de idioma ES/EN/FR."
+          data-i18n-en="Inclusive controls: theme, font size, reader and language change ES/EN/FR."
+          data-i18n-fr="Contrôles inclusifs : thème, taille de police, lecteur et changement de langue ES/EN/FR.">
+          Controles inclusivos: tema, tamaño de letra, narrador y cambio de idioma ES/EN/FR.
+        </p>
+        <p
+          data-i18n-es="Sitio desarrollado por: Francisco Pinto, UTP y todo el equipo técnico para la postulación al <strong>Global School Prize</strong>."
+          data-i18n-en="Site developed by: Francisco Pinto, UTP and the whole technical team for the <strong>Global Schools Prize</strong> application."
+          data-i18n-fr="Site développé par : Francisco Pinto, l’UTP et toute l’équipe technique pour la candidature au <strong>Global Schools Prize</strong>.">
+          Sitio desarrollado por: Francisco Pinto, UTP y todo el equipo tecnico para postulación <strong>Global School Prize</strong>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/animejs/dist/bundles/anime.umd.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/i18n.js"></script>
+
+  <!-- Micro-interacciones para la línea de tiempo -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      if (typeof anime === 'undefined') return;
+
+      var timelineCards = document.querySelectorAll('.timeline-card');
+
+      timelineCards.forEach(function (card, index) {
+        card.style.opacity = 0;
+        card.style.transform = 'translateY(24px)';
+
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              anime({
+                targets: card,
+                opacity: 1,
+                translateY: 0,
+                duration: 650,
+                delay: index * 80,
+                easing: 'easeOutQuad'
+              });
+              observer.unobserve(card);
+            }
+          });
+        }, { threshold: 0.2 });
+
+        observer.observe(card);
+
+        card.addEventListener('mouseenter', function () {
+          anime({
+            targets: card,
+            scale: 1.02,
+            translateY: -4,
+            duration: 250,
+            easing: 'easeOutQuad'
+          });
+        });
+
+        card.addEventListener('mouseleave', function () {
+          anime({
+            targets: card,
+            scale: 1,
+            translateY: 0,
+            duration: 250,
+            easing: 'easeOutQuad'
+          });
+        });
+      });
+
+      var yearButtons = document.querySelectorAll('.timeline-year-btn');
+
+      yearButtons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var year = btn.dataset.year;
+          var target = document.querySelector('.timeline-card[data-year="' + year + '"]');
+          if (target) {
+            yearButtons.forEach(function (b) { b.classList.remove('is-active'); });
+            btn.classList.add('is-active');
+
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+            anime({
+              targets: target,
+              scale: [1, 1.03],
+              boxShadow: [
+                '0 16px 40px rgba(15,23,42,0.95)',
+                '0 26px 60px rgba(37,99,235,0.95)'
+              ],
+              duration: 520,
+              direction: 'alternate',
+              easing: 'easeOutQuad'
+            });
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

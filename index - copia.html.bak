@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Centro Portafolios – Global Schools Prize</title>
+  <meta name="description" content="Centro de portafolios del Liceo Bicentenario de Excelencia Polivalente San Nicolás para la postulación al Global Schools Prize en las categorías STEM, Artes, Inclusión, Superación a la Adversidad y Sustentabilidad." />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <meta name="theme-color" content="#020617" />
+</head>
+<body class="dark-theme">
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+  <header class="topbar">
+    <div class="container navbar">
+      <div class="logo-wrap">
+        <img src="assets/img/logo-liceo-sannicolas.svg" alt="Logo Liceo Bicentenario San Nicolás" class="logo-img" />
+        <div class="logo-text">
+          <span class="logo-title">Liceo Bicentenario de Excelencia Polivalente San Nicolás</span>
+          <span class="logo-subtitle">Centro de Portafolios – Global Schools Prize</span>
+        </div>
+      </div>
+
+      <div class="topbar-right">
+        <button class="icon-btn" id="btn-home" title="Ir al inicio">🏠</button>
+        <button class="icon-btn" id="btn-theme" title="Cambiar tema claro/oscuro">🌓</button>
+        <button class="icon-btn" id="btn-font-inc" title="Aumentar tamaño de letra">A+</button>
+        <button class="icon-btn" id="btn-font-dec" title="Disminuir tamaño de letra">A−</button>
+        <button class="icon-btn" id="btn-narrator" title="Activar narrador del contenido">🗣️</button>
+        <button class="icon-btn" id="btn-language" title="Cambiar idioma ES/EN/MAPU">🌐</button>
+        <div class="search-wrapper">
+          <span class="search-icon">🔍</span>
+          <input type="search" id="search-input" placeholder="Buscar categoría o proyecto…" aria-label="Buscar en el Centro" />
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h1 data-i18n-es="Centro de portafolios – Global Schools Prize"
+              data-i18n-en="Portfolios Hub – Global Schools Prize">
+            Centro de portafolios – Global Schools Prize
+          </h1>
+          <p class="hero-lead"
+             data-i18n-es="Este Centro organiza los cinco portafolios del <strong>liceo</strong> para la postulación al <strong>Global Schools Prize</strong>, conectando STEM, Artes, Inclusión, Superación a la Adversidad y Sustentabilidad desde el PEI."
+             data-i18n-en="This hub organizes the <strong>school's</strong> five portfolios for the Global Schools Prize application, connecting STEM, Arts, Inclusion, Overcoming Adversity and Sustainability from the School Project (PEI).">
+            Este centro organiza los cinco portafolios del liceo para la postulación al Global Schools Prize, conectando
+            Superación a la Adversidad, Artes, STEM, Inclusión y Sustentabilidad desde el PEI.
+          </p>
+          <p class="hero-note">
+            Pensado para ser el <strong>punto de entrada</strong> que se puede usar como enlace maestro en correos,
+            presentaciones y, cuando corresponda, como uno de los enlaces web permitidos en las respuestas del premio.
+          </p>
+          <div class="hero-tags">
+            <span class="tag">💪 Superación</span>
+            <span class="tag">🎨 Artes</span>
+            <span class="tag">🔬 STEM</span>
+            <span class="tag">♿ Inclusión</span>
+            <span class="tag">🌱 Sustentabilidad</span>
+          </div>
+        </div>
+        <div class="hero-card" aria-label="Recomendación de uso del centro">
+          <h2>Cómo usar este centro</h2>
+          <ol>
+            <li>🔗 Usa este centro para navegar rápidamente entre las cinco categorías.</li>
+            <li>📝 En el formulario del Global Schools Prize, enlaza <strong>directamente</strong> a los portafolios específicos según la pregunta.</li>
+            <li>📎 Este centro puede funcionar como enlace general de contexto en correos y anexos.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>Categorías en las que se postula</h2>
+        <div class="card-grid">
+
+ 	<article class="card" data-search-tags="superacion adversidad resiliencia apoyos socioemocionales historias">
+            <h3>💪 Superación a la Adversidad</h3>
+            <p>
+              Historias, apoyos y proyectos que muestran cómo el liceo acompaña a estudiantes y comunidades que han
+              debido enfrentar adversidad, articulando apoyos socioemocionales, PIE y proyectos significativos.
+            </p>
+            <p class="note">
+              Aquí debes colocar la URL pública del portafolio de Superación a la Adversidad.
+            </p>
+            <div class="card-actions">
+              <a href="C:\Users\panch\OneDrive\Escritorio\LPSN_CENTRO_PORTAFOLIO\LPSN_superacion_adversidad_PORTAFOLIO_GSP\index.html" class="btn-secondary"
+                 title="Abre enlace del portafolio de Superación a la Adversidad">
+                💪 Abrir portafolio Superación
+              </a>
+            </div>
+          </article>
+
+  	<article class="card" data-search-tags="artes cultura creatividad ver con las manos craneos 3d vr patrimonio">
+            <h3>🎨 Artes, Cultura y Creatividad</h3>
+            <p>
+              Experiencias artísticas y culturales como Ver con las Manos, Cráneos 3D + VR, talleres de folclor, teatro
+              y proyectos audiovisuales que cruzan arte, patrimonio e inclusión.
+            </p>
+            <p class="note">
+              Aquí debes colocar la URL pública del portafolio de Artes, Cultura y Creatividad.
+            </p>
+            <div class="card-actions">
+              <a href="C:\Users\panch\OneDrive\Escritorio\LPSN_CENTRO_PORTAFOLIO\LPSN_artes_cultura_creatividad_PORTAFOLIO_GSP\index.html" class="btn-secondary"
+                 title="Abre enlace del portafolio de Artes,cultura y creatividadd">
+                🎨 Abrir portafolio Artes
+              </a>
+            </div>
+          </article>
+
+          <article class="card" data-search-tags="stem ciencia tecnologia ingenieria matematicas iot xr datos">
+            <h3>🔬 STEM</h3>
+            <p>
+              Calidad y equidad en el acceso a STEM: ciencia, tecnología, ingeniería, matemáticas para todos, 
+              incluyendo estudiantes que normalmente quedan fuera.
+            </p>
+            <p class="note">
+             Proyectos de ciencia, tecnología, ingeniería y matemáticas: IoT, monitoreo ambiental, XR, diseño 3D y
+              otros, siempre articulados con el PEI y la inclusión.
+            </p>
+            <div class="card-actions">
+              <a href="C:\Users\panch\OneDrive\Escritorio\LPSN_CENTRO_PORTAFOLIO\LPSN_stem_PORTAFOLIO_GSP\index.html" class="btn-primary"
+                 title="Abre enlace del portafolio STEM">
+                🔬 Abrir portafolio STEM
+              </a>
+            </div>
+		<div class="card-actions">
+ 				 <a href="projects/siamp.html" class="btn-primary">🔍 Ver proyectos</a>
+ 				 <a href="assets/docs/informes/" class="btn-secondary">📄 Ver evidencias</a>
+ 		</div>
+
+          </article>
+
+        
+
+          <article class="card" data-search-tags="inclusion pei pie necesidades educativas especiales apoyos accesibilidad">
+            <h3>♿ Inclusión</h3>
+            <p>
+              Cómo el liceo quita barreras para que estudiantes PIE/NEE participen en clases de calidad, incluyendo STEM y proyectos ambientales.
+            </p>
+            <p class="note">
+              Portafolio que muestra el trabajo del PIE, las adecuaciones, los apoyos y el enfoque inclusivo del PEI,
+              incluyendo el diseño de recursos accesibles y repositorios con controles inclusivos.
+            </p>
+            <div class="card-actions">
+              <a href="C:\Users\panch\OneDrive\Escritorio\LPSN_CENTRO_PORTAFOLIO\LPSN_Educacion_Inclusiva_GSP\index.html" class="btn-secondary"
+                 title="Abre enlace del portafolio de Inclusión">
+                ♿ Abrir portafolio Inclusión
+              </a>
+            </div>
+          </article>
+
+         
+
+          <article class="card" data-search-tags="sustentabilidad medio ambiente invernadero biodigestor acuaponia lixiviados">
+            <h3>🌱 Sustentabilidad</h3>
+            <p>
+              La escuela como laboratorio vivo de sustentabilidad: medioambiente, energía, territorio, acción estudiantil.
+            </p>
+            <p class="note">
+              Invernadero, biodigestor, acuaponía, lixiviados, comités ambientales y educación ambiental articulada
+              con STEM, inclusión y participación comunitaria.
+            </p>
+            <div class="card-actions">
+              <a href="C:\Users\panch\OneDrive\Escritorio\LPSN_CENTRO_PORTAFOLIO\LPSN_Sustentabilidad_PORTAFOLIO_GSP\index.html" class="btn-secondary"
+                 title="Abre enlace del portafolio de Sustentabilidad">
+                🌱 Abrir portafolio Sustentabilidad
+              </a>
+            </div>
+		<div class="card-actions">
+ 				 <a href="projects/siamp.html" class="btn-primary">🔍 Ver proyectos</a>
+ 				 <a href="assets/docs/informes/" class="btn-secondary">📄 Ver evidencias</a>
+ 		</div>
+
+
+          </article>
+        </div>
+      </div>
+    </section>
+    <!-- Sección documentos institucionales -->
+    <section class="section">
+      <div class="container">
+        <h2
+          data-i18n-es="🗂️Documentos institucionales clave"
+          data-i18n-en="🗂️Key institutional documents">
+         🗂️ Documentos institucionales clave
+        </h2>
+
+        <p
+          data-i18n-es="Desde este centro puedes acceder rápidamente al PEI y a la revista institucional del liceo como evidencias de contexto."
+          data-i18n-en="From this hub you can quickly access the School Project (PEI) and the school magazine as context evidence.">
+          Desde este centro puedes acceder rápidamente al PEI y a la revista institucional del liceo como evidencias de contexto.
+        </p>
+
+        <div class="card-actions">
+          <a
+            href="assets/docs/PEI-LPSN-2025.pdf"
+            class="btn-primary"
+            download
+            title="Descargar PEI del Liceo Bicentenario San Nicolás">
+            🔍 Ver PEI (Proyecto Educativo Institucional)
+          </a>
+
+          <a
+            href="assets/docs/LPSN_REVISTA_Institucional_Vmarzo2025.pdf"
+            class="btn-secondary"
+            download
+            title="Descargar revista institucional del liceo">
+            📄 Ver Revista LBSN
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section alt">
+      <div class="container">
+        <h2>Orientaciones para la postulación</h2>
+        <div class="card-grid">
+          <article class="card" data-search-tags="enlaces evidencias global schools prize orientaciones uso links">
+            <h3>Uso de enlaces y evidencias</h3>
+            <p>
+              Recuerda que, en las respuestas del Global Schools Prize, se permite un número limitado de enlaces por
+              respuesta. Este centro te ayuda a decidir qué portafolio enlazar en cada caso (STEM, Inclusión, Artes,
+              Sustentabilidad, Superación).
+            </p>
+            <p>
+              Desde cada portafolio puedes seleccionar las evidencias clave (fotos, informes, videos) y, cuando sea
+              necesario, convertirlas en PDFs breves para adjuntarlas según las reglas del premio.
+            </p>
+          </article>
+
+          <article class="card" data-search-tags="pei coherencia articulacion categorias narrativa comun">
+            <h3>Una narrativa común desde el PEI</h3>
+            <p>
+              Aunque las categorías son distintas, todos los portafolios comparten una misma narrativa institucional:
+              un liceo que articula inclusión, STEM, artes y sustentabilidad para acompañar a sus estudiantes y
+              comunidades en la superación de la adversidad.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="assets/img/logo-liceo-sannicolas.svg" alt="Logo Liceo Bicentenario San Nicolás" class="footer-logo" />
+        <div>
+          <p><strong>Liceo Bicentenario de Excelencia Polivalente San Nicolás</strong></p>
+          <p>Centro de Portafolios – <strong>Global School Prize</strong></p>
+        </div>
+      </div>
+      <div class="footer-meta">
+        <p>Sitio para organizar los portafolios por categoría.</p>
+        <p>Controles inclusivos: tema, tamaño de letra, narrador y cambio de idioma ES/EN/Mapudungun (Referencial).</p>
+	<p>Sitio desarrollado por: Francisco Pinto, UTP y todo el equipo tecnico para postulación <strong>Global School Prize</strong></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/animejs/dist/bundles/anime.umd.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
