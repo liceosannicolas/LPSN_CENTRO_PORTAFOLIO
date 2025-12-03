@@ -824,6 +824,13 @@
             <div class="milestone-dot">23–24</div>
             <div class="milestone-label">Industria 4.0<br />Alianzas estratégicas</div>
           </button>
+
+            <!-- revisar esta partet -->
+          
+          <div class="timeline-progress" aria-hidden="true">
+            <div class="timeline-progress-bar"></div>
+            </div>
+            
         </div>
 
         <!-- Detalle de hitos y cartas de vinculación -->
@@ -1029,29 +1036,7 @@
               </a>
             </article>
 
-            <article class="timeline-card" data-year="2024">
-              <div class="timeline-card-header">
-                <div>
-                  <div class="timeline-card-year">2024</div>
-                  <h3>Hospital Clínico Herminda Martín de Chillán</h3>
-                </div>
-                <span class="timeline-card-badge">🥽 VR para rehabilitación</span>
-              </div>
-              <p>
-                Vinculación para explorar el uso de realidad virtual en rehabilitación motora, generando un puente
-                entre el trabajo del liceo, el Centro TIE y los equipos clínicos del hospital.
-              </p>
-              <p class="small">
-                La carta muestra cómo el liceo extiende su impacto más allá del aula, hacia la salud y el bienestar de
-                la comunidad.
-              </p>
-              <a href="#"
-                 class="btn-secondary">
-                <span>📄 Ver carta de colaboración</span>
-              </a>
-            </article>
-
-            <article class="timeline-card" data-year="2024">
+           <!-- <article class="timeline-card" data-year="2024">
               <div class="timeline-card-header">
                 <div>
                   <div class="timeline-card-year">2024</div>
@@ -1072,7 +1057,7 @@
                  class="btn-secondary">
                 <span>📄 Ver carta / acuerdo Neotech</span>
               </a>
-            </article>
+            </article>-->
           </div>
         </div>
       </div>
@@ -1127,11 +1112,12 @@
   <script src="assets/js/main.js"></script>
   <script src="assets/js/i18n.js"></script>
 
-  <!-- Micro-interacciones para la línea de tiempo -->
+   <!-- Micro-interacciones para la línea de tiempo -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       if (typeof anime === 'undefined') return;
 
+      // Aparición suave de todas las tarjetas de la línea de tiempo
       var cards = document.querySelectorAll('.timeline-card');
 
       cards.forEach(function (card, index) {
@@ -1177,26 +1163,123 @@
         });
       });
 
+      // 🎬 Timelapse interactivo de hitos
       var pills = document.querySelectorAll('.milestone-pill');
+      var timelineSection = document.getElementById('hitos');
+      var progressBar = document.querySelector('.timeline-progress-bar');
 
-      pills.forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          var year = btn.dataset.year;
-          var target = document.querySelector('.timeline-card[data-year="' + year + '"]');
-          if (target) {
-            pills.forEach(function (b) { b.classList.remove('is-active'); });
-            btn.classList.add('is-active');
+      if (!pills.length || !timelineSection) return;
 
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      var yearOrder = Array.from(pills).map(function (btn) { return btn.dataset.year; });
+      var autoIndex = 0;
+      var autoIntervalId = null;
+      var autoplayDelay = 5200; // ms entre cada hito
+      var autoEnabled = true;
 
-            anime({
-              targets: target,
-              scale: [1, 1.03],
-              duration: 520,
-              direction: 'alternate',
-              easing: 'easeOutQuad'
-            });
+      function highlightYear(year, options) {
+        options = options || {};
+        var scroll = options.scroll !== false;
+        var animateProgress = options.animateProgress !== false;
+
+        var targetCard = document.querySelector('.timeline-card[data-year="' + year + '"]');
+        var activePill = Array.from(pills).find(function (btn) { return btn.dataset.year === year; });
+
+        if (!activePill) return;
+
+        // Estado visual de pills
+        pills.forEach(function (btn) { btn.classList.remove('is-active'); });
+        activePill.classList.add('is-active');
+
+        // Pulso del círculo del año
+        var dot = activePill.querySelector('.milestone-dot');
+        if (dot) {
+          anime.remove(dot);
+          anime({
+            targets: dot,
+            scale: [1, 1.18],
+            translateY: [-2, -6],
+            duration: 420,
+            direction: 'alternate',
+            easing: 'easeOutBack'
+          });
+        }
+
+        // Enfocar tarjeta correspondiente
+        if (targetCard && scroll) {
+          targetCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          anime.remove(targetCard);
+          anime({
+            targets: targetCard,
+            scale: [1, 1.03],
+            duration: 520,
+            direction: 'alternate',
+            easing: 'easeOutQuad'
+          });
+        }
+
+        // Barra de progreso del timelapse
+        if (progressBar && animateProgress) {
+          anime.remove(progressBar);
+          progressBar.style.width = '0%';
+          anime({
+            targets: progressBar,
+            width: '100%',
+            duration: autoplayDelay - 400,
+            easing: 'linear'
+          });
+        }
+      }
+
+      function startAutoplay() {
+        if (autoIntervalId || !autoEnabled || !yearOrder.length) return;
+
+        // Destaca el año actual al iniciar
+        highlightYear(yearOrder[autoIndex], { scroll: false });
+
+        autoIntervalId = setInterval(function () {
+          autoIndex = (autoIndex + 1) % yearOrder.length;
+          highlightYear(yearOrder[autoIndex], { scroll: true });
+        }, autoplayDelay);
+      }
+
+      function stopAutoplay() {
+        autoEnabled = false;
+        if (autoIntervalId) {
+          clearInterval(autoIntervalId);
+          autoIntervalId = null;
+        }
+        if (progressBar) {
+          anime.remove(progressBar);
+          progressBar.style.width = '0%';
+        }
+      }
+
+      // Inicia timelapse cuando la sección entra en pantalla
+      var sectionObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            if (!autoIntervalId && autoEnabled) {
+              startAutoplay();
+            }
+          } else if (autoIntervalId) {
+            clearInterval(autoIntervalId);
+            autoIntervalId = null;
+            if (progressBar) {
+              anime.remove(progressBar);
+              progressBar.style.width = '0%';
+            }
           }
+        });
+      }, { threshold: 0.35 });
+
+      sectionObserver.observe(timelineSection);
+
+      // Interacción manual: al hacer clic se detiene el modo automático
+      pills.forEach(function (btn, index) {
+        btn.addEventListener('click', function () {
+          autoIndex = index;
+          stopAutoplay();
+          highlightYear(btn.dataset.year, { scroll: true, animateProgress: false });
         });
       });
     });
