@@ -1,20 +1,16 @@
 # Hub de Portafolios – Global Schools Prize
 
-Este sitio funciona como **hub central** de los portafolios del Liceo Bicentenario de Excelencia Polivalente San Nicolás para la postulación al **Global Schools Prize**.
+Este sitio funciona como **hub central** de portafolios del Liceo Bicentenario de Excelencia Polivalente San Nicolás para la postulación al **Global Schools Prize**.
 
 ## ¿Qué organiza este hub?
 
-Cinco portafolios por categoría:
+ portafolios por categoría: Ejemplo:
 
-- 🔬 **STEM**
-- 🎨 **Artes, Cultura y Creatividad**
-- ♿ **Inclusión**
-- 💪 **Superación a la Adversidad**
 - 🌱 **Sustentabilidad**
 
 ## Controles inclusivos
 
-El sitio tiene controles inclusivos en todos los portafolios:
+El sitio tiene controles inclusivos en todas sus paginas:
 
 - 🌓 Cambio de tema claro/oscuro
 - A+/A− Ajuste de tamaño de letra
@@ -30,6 +26,6 @@ El sitio tiene controles inclusivos en todos los portafolios:
   
 ## COMO CONSEJO 
 
-- En las respuestas específicas del formulario del Global Schools Prize, enlaza de forma directa al portafolio de la categoría correspondiente (STEM, Inclusión, Artes, Sustentabilidad, Superación), respetando el máximo de enlaces permitido por respuesta según las bases.
+- En las respuestas específicas del formulario del Global Schools Prize, enlaza de forma directa al portafolio de la categoría correspondiente (ejemplo :  Sustentabilidad), respetando el máximo de enlaces permitido por respuesta según las bases.
 
 ## Sitio desarrollado por: Francisco Pinto, UTP y todo el equipo técnico para la postulación al Global School Prize.
