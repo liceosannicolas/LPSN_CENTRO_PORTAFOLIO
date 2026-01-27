@@ -1,0 +1,107 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const body = document.body;
+  const btnTheme = document.getElementById("btn-theme");
+  const btnHome = document.getElementById("btn-home");
+  const btnFontInc = document.getElementById("btn-font-inc");
+  const btnFontDec = document.getElementById("btn-font-dec");
+  const btnNarrator = document.getElementById("btn-narrator");
+  const btnLanguage = document.getElementById("btn-language");
+  const searchInput = document.getElementById("search-input");
+
+  // THEME
+  const storedTheme = localStorage.getItem("gsp-pei-theme");
+  if (storedTheme === "light") {
+    body.classList.remove("dark-theme");
+    body.classList.add("light-theme");
+  }
+
+  btnTheme?.addEventListener("click", () => {
+    body.classList.toggle("light-theme");
+    const isLight = body.classList.contains("light-theme");
+    localStorage.setItem("gsp-pei-theme", isLight ? "light" : "dark");
+  });
+
+  // HOME
+  btnHome?.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  // FONT SIZE
+  let baseFontSize = 16;
+  const applyFontSize = () => {
+    document.documentElement.style.fontSize = baseFontSize + "px";
+  };
+  btnFontInc?.addEventListener("click", () => {
+    if (baseFontSize < 20) {
+      baseFontSize += 1;
+      applyFontSize();
+    }
+  });
+  btnFontDec?.addEventListener("click", () => {
+    if (baseFontSize > 14) {
+      baseFontSize -= 1;
+      applyFontSize();
+    }
+  });
+
+  // NARRATOR
+  let speaking = false;
+  btnNarrator?.addEventListener("click", () => {
+    if (!("speechSynthesis" in window)) {
+      alert("El narrador no está disponible en este navegador.");
+      return;
+    }
+    const synth = window.speechSynthesis;
+    if (speaking) {
+      synth.cancel();
+      speaking = false;
+      return;
+    }
+    const main = document.getElementById("main-content");
+    if (!main) return;
+    const text = main.innerText;
+    if (!text.trim()) return;
+    const utter = new SpeechSynthesisUtterance(text);
+    utter.lang = document.documentElement.lang === "en" ? "en-US" : "es-ES";
+    utter.onend = () => {
+      speaking = false;
+    };
+    speaking = true;
+    synth.speak(utter);
+  });
+
+  // LANGUAGE
+  let currentLang = "es";
+  const translatable = document.querySelectorAll("[data-i18n-es][data-i18n-en]");
+  btnLanguage?.addEventListener("click", () => {
+    currentLang = currentLang === "es" ? "en" : "es";
+    document.documentElement.lang = currentLang === "es" ? "es" : "en";
+    translatable.forEach(el => {
+      const text = el.getAttribute(currentLang === "es" ? "data-i18n-es" : "data-i18n-en");
+      if (text) el.innerHTML = text;
+    });
+    btnLanguage.title = currentLang === "es" ? "Cambiar idioma ES/EN" : "Switch language ES/EN";
+  });
+
+  // SEARCH (simple filter by data-search-tags and text)
+  const cards = Array.from(document.querySelectorAll("[data-search-tags], .card"));
+  searchInput?.addEventListener("input", () => {
+    const query = searchInput.value.trim().toLowerCase();
+    cards.forEach(card => {
+      const haystack =
+        (card.getAttribute("data-search-tags") || "") +
+        " " +
+        card.textContent.toLowerCase();
+      if (!query || haystack.includes(query)) {
+        card.style.display = "";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  });
+
+  // Register service worker (best-effort)
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("sw.js").catch(() => {});
+  }
+});
