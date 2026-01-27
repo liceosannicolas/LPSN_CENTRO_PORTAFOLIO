@@ -70,10 +70,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const text = main.innerText;
     if (!text.trim()) return;
     const utter = new SpeechSynthesisUtterance(text);
+    // Mapudungun referencial usa voz en español
     if (document.documentElement.lang === "en") {
       utter.lang = "en-US";
-    } else if (document.documentElement.lang === "fr") {
-      utter.lang = "fr-FR";
     } else {
       utter.lang = "es-ES";
     }
@@ -84,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
     synth.speak(utter);
   });
 
-  // LANGUAGE ES / EN / FR
+  // LANGUAGE ES / EN / MAPU (Mapudungun referencial)
   let currentLang = "es";
   const translatable = document.querySelectorAll("[data-i18n-es]");
   const translatablePlaceholders = document.querySelectorAll("[data-i18n-placeholder-es]");
@@ -95,13 +94,9 @@ document.addEventListener("DOMContentLoaded", () => {
     let text = "";
     if (currentLang === "en") {
       text = el.getAttribute(baseAttr + "-en") || el.getAttribute(baseAttr + "-es") || "";
-    } else if (currentLang === "fr") {
-      // Si no hay versión en francés, se usa inglés y luego español como respaldo
-      text =
-        el.getAttribute(baseAttr + "-fr") ||
-        el.getAttribute(baseAttr + "-en") ||
-        el.getAttribute(baseAttr + "-es") ||
-        "";
+    } else if (currentLang === "mapu") {
+      // Si no hay versión en mapudungun, se usa el texto en español como referencia
+      text = el.getAttribute(baseAttr + "-map") || el.getAttribute(baseAttr + "-es") || "";
     } else {
       text = el.getAttribute(baseAttr + "-es") || "";
     }
@@ -112,8 +107,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // Ajustar atributo lang del documento
     if (currentLang === "en") {
       document.documentElement.lang = "en";
-    } else if (currentLang === "fr") {
-      document.documentElement.lang = "fr";
+    } else if (currentLang === "mapu") {
+      // Mapudungun referencial: se usa 'arn' como código aproximado
+      document.documentElement.lang = "arn";
     } else {
       document.documentElement.lang = "es";
     }
@@ -153,11 +149,11 @@ document.addEventListener("DOMContentLoaded", () => {
     // Tooltip del botón de idioma
     if (btnLanguage) {
       if (currentLang === "es") {
-        btnLanguage.title = "Cambiar idioma ES/EN/FR";
+        btnLanguage.title = "Cambiar idioma ES/EN/MAPU";
       } else if (currentLang === "en") {
-        btnLanguage.title = "Switch language ES/EN/FR";
+        btnLanguage.title = "Switch language ES/EN/MAPU";
       } else {
-        btnLanguage.title = "Changer la langue ES/EN/FR";
+        btnLanguage.title = "Küme zugun: ES/EN/MAPU (referencial)";
       }
     }
   };
@@ -167,7 +163,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (currentLang === "es") {
         currentLang = "en";
       } else if (currentLang === "en") {
-        currentLang = "fr";
+        currentLang = "mapu";
       } else {
         currentLang = "es";
       }
@@ -179,8 +175,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const docLang = document.documentElement.lang;
   if (docLang === "en") {
     currentLang = "en";
-  } else if (docLang === "fr") {
-    currentLang = "fr";
+  } else if (docLang === "arn") {
+    currentLang = "mapu";
   } else {
     currentLang = "es";
   }

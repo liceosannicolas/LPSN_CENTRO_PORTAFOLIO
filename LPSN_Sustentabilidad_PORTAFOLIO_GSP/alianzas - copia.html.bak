@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alianzas ambientales, científicas y comunitarias</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <meta name="theme-color" content="#022c22" />
+</head>
+<body class="dark-theme">
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+  <!-- Barra superior con controles inclusivos -->
+  <header class="topbar">
+    <div class="container navbar">
+      <div class="logo-wrap">
+        <img src="assets/img/logo-liceo-sannicolas.svg"
+             alt="Logo Liceo Bicentenario San Nicolás"
+             class="logo-img" />
+        <div class="logo-text">
+          <span class="logo-title">Liceo Bicentenario de Excelencia Polivalente San Nicolás</span>
+          <span class="logo-subtitle">Portafolio Sustentabilidad – Global Schools Prize</span>
+        </div>
+      </div>
+
+      <div class="topbar-right">
+        <button class="icon-btn" id="btn-home" title="Ir al inicio"><a href="index.html" >🏠</a></button>
+        <button class="icon-btn" id="btn-theme" title="Cambiar tema claro/oscuro">🌓</button>
+        <button class="icon-btn" id="btn-font-inc" title="Aumentar tamaño de letra">A+</button>
+        <button class="icon-btn" id="btn-font-dec" title="Disminuir tamaño de letra">A−</button>
+        <button class="icon-btn" id="btn-narrator" title="Activar narrador del contenido">🗣️</button>
+        <button class="icon-btn" id="btn-language" title="Cambiar idioma ES/EN">🌐</button>
+        <div class="search-wrapper">
+          <span class="search-icon">🔍</span>
+          <input
+            type="search"
+            id="search-input"
+            placeholder="Buscar proyectos o conceptos de sustentabilidad…"
+            aria-label="Buscar en el portafolio"
+          />
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sub-header de la página -->
+
+    <div class="container sub-header-inner">
+      <h1>🤝Alianzas ambientales, científicas y comunitarias</h1>
+	<a href="index.html" class="sub-back">⬅ Volver 🏠</a>
+    </div>
+
+
+  <main id="main-content" class="container page">
+    <!-- Intro -->
+    <section class="page-section">
+      <h2>Mapa de alianzas para la sustentabilidad</h2>
+      <p>
+        El trabajo en sustentabilidad del liceo no se desarrolla en forma aislada: se nutre de alianzas con centros de
+        investigación, organizaciones territoriales y redes que amplían las oportunidades de aprendizaje para los
+        estudiantes.
+      </p>
+      <p>
+        En esta página se destacan algunas de las alianzas clave, con una breve descripción de la colaboración y acceso
+        directo a las cartas de vinculación que acompañan la postulación al
+        <strong>Global Schools Prize</strong>.
+      </p>
+    </section>
+
+    <!-- Alianzas destacadas -->
+    <section class="page-section">
+      <h2>Alianzas destacadas</h2>
+      <div class="card-grid">
+        <!-- INCAR -->
+        <article class="card"
+                 data-search-tags="incar centro investigacion acuicultura ciencia sustentabilidad feria regional">
+          <h3>🔬 Centro INCAR – Universidad de Concepción</h3>
+          <p>
+            El Centro Interdisciplinario para la Investigación Acuícola (INCAR) mantiene una colaboración sostenida con
+            el liceo, acompañando proyectos sobre sustentabilidad de ecosistemas acuáticos, acuicultura responsable y
+            cuidado del medio ambiente.
+          </p>
+          <ul class="key-list">
+            <li>Asesoría científica y técnica en proyectos escolares de acuicultura y sustentabilidad.</li>
+            <li>Talleres y charlas para estudiantes y docentes sobre desafíos ambientales en la Región de Ñuble.</li>
+            <li>Apoyo a iniciativas que integran ciencia, tecnología y sostenibilidad, fortaleciendo habilidades STEM.</li>
+            <li>
+              Co-organización de la
+              <em>Feria Regional Educativa de Ciencia e Innovación: Agua, Tierra y Tecnología para un Futuro Sustentable</em>.
+            </li>
+          </ul>
+          <div class="card-actions">
+            <a
+              href="cartas_vinculacion/LPSN_Carta_vinculación_INCAR.pdf"
+              class="btn-primary"
+              target="_blank"
+              rel="noopener"
+              download
+            >
+              📄 Descargar carta de vinculación INCAR (PDF)
+            </a>
+          </div>
+          <p class="note">
+            Esta alianza refuerza la dimensión científica del portafolio, conectando el trabajo escolar con la
+            investigación de frontera en acuicultura sustentable.
+          </p>
+        </article>
+
+        <!-- ONG Oxum -->
+        <article class="card"
+                 data-search-tags="ong oxum participacion ciudadania comunidad territorio derechos estudiantes">
+          <h3>🌊 ONG Oxum – Ciudadanía y compromiso comunitario</h3>
+          <p>
+            La O.N.G. Oxum trabaja con el liceo en la formación ciudadana y el fortalecimiento del compromiso
+            comunitario, mediante charlas y espacios formativos que ponen en el centro la participación estudiantil y el
+            vínculo con el territorio.
+          </p>
+          <ul class="key-list">
+            <li>Encuentros con estudiantes sobre participación ciudadana y organización social.</li>
+            <li>Reflexión sobre derechos, deberes y responsabilidad social en contextos reales.</li>
+            <li>Articulación entre escuela, comunidad local y organizaciones de la sociedad civil.</li>
+            <li>
+              Apoyo explícito a la postulación del liceo al Global Schools Prize por su enfoque inclusivo y vinculado al
+              territorio.
+            </li>
+          </ul>
+          <div class="card-actions">
+            <a
+              href="cartas_vinculacion/LPSN_Carta_vinculación_ONG_Oxum.pdf"
+              class="btn-secondary"
+              target="_blank"
+              rel="noopener"
+              download
+            >
+              📄 Descargar carta de vinculación ONG Oxum (PDF)
+            </a>
+          </div>
+          <p class="note">
+            Esta alianza complementa la dimensión científica con una mirada ciudadana, ética y comunitaria, reforzando
+            la idea de la escuela como espacio de participación democrática.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Tabla / esquema sugerido -->
+    <section class="page-section">
+      <h2>Resumen de alianzas y evidencias</h2>
+      <p>
+        Para efectos de la postulación y del trabajo interno del liceo, se sugiere mantener un registro actualizado de
+        las alianzas en una tabla simple, que luego puede replicarse en este mismo sitio o en una hoja de cálculo.
+      </p>
+
+      <div class="table-wrapper">
+        <table class="simple-table">
+          <thead>
+            <tr>
+              <th>Institución</th>
+              <th>Tipo de colaboración</th>
+              <th>Año de inicio</th>
+              <th>Evidencias clave</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Centro INCAR – UdeC</td>
+              <td>Asesoría científica, talleres, proyectos de investigación escolar y feria regional.</td>
+              <td>2024</td>
+              <td>
+                Cartas de apoyo, registros de talleres, proyectos de acuicultura y feria regional
+                <em>Agua, Tierra y Tecnología</em>.
+              </td>
+            </tr>
+            <tr>
+              <td>ONG Oxum</td>
+              <td>Charlas y espacios formativos en participación ciudadana y compromiso comunitario.</td>
+              <td>2025</td>
+              <td>Cartas de apoyo, actas de actividades, fotografías y testimonios estudiantiles.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">
+        Puedes agregar nuevas filas para otras alianzas (municipalidad, universidades, centros de salud, etc.) y
+        enlazar sus evidencias desde este mismo portafolio.
+      </p>
+    </section>
+
+    <!-- Nueva sección: galería con las fotos que enviaste -->
+    <section class="page-section">
+      <h2>Galería de momentos y proyectos vinculados</h2>
+      <p>
+        Estas imágenes muestran resultados concretos del trabajo colaborativo: estudiantes participando en instancias
+        formativas y proyectos de innovación que conectan inclusión, tecnología y sustentabilidad.
+      </p>
+
+      <div class="card-grid">
+        <!-- Foto certificación feria / alianza INCAR -->
+        <article class="card" data-search-tags="feria regional certificacion estudiantes incAR agua tierra tecnologia">
+          <figure>
+            <img
+              src="imagenes/alianzas_certificacion.jpg"
+              alt="Estudiantes del Liceo Bicentenario San Nicolás recibiendo certificados en la feria Agua, Tierra y Tecnología."
+              style="width:100%; border-radius:18px; object-fit:cover; max-height:260px;"
+            />
+            <figcaption class="note">
+              Estudiantes del liceo recibiendo certificación en la
+              <strong>Feria Regional Educativa de Ciencia e Innovación: Agua, Tierra y Tecnología</strong>, instancia
+              co-organizada con el Centro INCAR y otras instituciones.
+            </figcaption>
+          </figure>
+        </article>
+
+        <!-- Foto órtesis 3D primer plano -->
+        <article class="card" data-search-tags="ortesis 3d diseno sin barreras inclusion tecnologia asistiva">
+          <figure>
+            <img
+              src="C:\Users\panch\OneDrive\Escritorio\LPSN_CENTRO_PORTAFOLIO\LPSN_stem_PORTAFOLIO_GSP/imagenes/alianzas_ortesis_2.jpg"
+              alt="Órtesis roja y celeste impresa en 3D, en primer plano."
+              style="width:100%; border-radius:18px; object-fit:cover; max-height:260px;"
+            />
+            <figcaption class="note">
+              Prototipo de órtesis impresa en 3D desarrollada en el proyecto
+              <strong>Diseño sin Barreras</strong>, que articula tecnología asistiva, inclusión y trabajo colaborativo
+              entre estudiantes, familia y profesionales externos.
+            </figcaption>
+          </figure>
+        </article>
+
+        <!-- Foto órtesis 3D completa -->
+        <article class="card" data-search-tags="ortesis pierna completa movilidad inclusion proyecto diseno sin barreras">
+          <figure>
+            <img
+              src="imagenes/alianzas_ortesis_2.jpg"
+              alt="Órtesis de pierna completa roja y celeste apoyada en un mueble dentro de la sala."
+              style="width:100%; border-radius:18px; object-fit:cover; max-height:260px;"
+            />
+            <figcaption class="note">
+              Vista completa de la órtesis de pierna, diseñada a partir de las necesidades de una estudiante, como
+              ejemplo de innovación con foco en la autonomía y la calidad de vida.
+            </figcaption>
+          </figure>
+        </article>
+      </div>
+    </section>
+  </main>
+
+   <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="assets/img/logo-liceo-sannicolas.svg"
+             alt="Logo Liceo Bicentenario San Nicolás"
+             class="footer-logo" />
+        <div>
+          <p
+            data-i18n-es="<strong>Liceo Bicentenario de Excelencia Polivalente San Nicolás</strong>"
+            data-i18n-en="<strong>Liceo Bicentenario de Excelencia Polivalente San Nicolás</strong>"
+            data-i18n-map="<strong>Liceo Bicentenario de Excelencia Polivalente San Nicolás</strong>">
+            <strong>Liceo Bicentenario de Excelencia Polivalente San Nicolás</strong>
+          </p>
+          <p
+            data-i18n-es="Centro de Portafolios – <strong>Global School Prize</strong>"
+            data-i18n-en="Portfolios Hub – <strong>Global Schools Prize</strong>"
+            data-i18n-map="Centro de Portafolios – <strong>Global School Prize</strong>">
+            Centro de Portafolios – <strong>Global School Prize</strong>
+          </p>
+        </div>
+      </div>
+      <div class="footer-meta">
+        <p
+          data-i18n-es="Sitio para organizar los portafolios por categoría."
+          data-i18n-en="Site to organize portfolios by category."
+          data-i18n-map="Sitio para organizar los portafolios por categoría.">
+          Sitio para organizar los portafolios por categoría.
+        </p>
+        <p
+          data-i18n-es="Controles inclusivos: tema, tamaño de letra, narrador y cambio de idioma ES/EN/Mapudungun (Referencial)."
+          data-i18n-en="Inclusive controls: theme, font size, reader and language change ES/EN/Mapudungun (referential)."
+          data-i18n-map="Controles inclusivos: tema, tamaño de letra, narrador y cambio de idioma ES/EN/Mapudungun (Referencial).">
+          Controles inclusivos: tema, tamaño de letra, narrador y cambio de idioma ES/EN/Mapudungun (Referencial).
+        </p>
+        <p
+          data-i18n-es="Sitio desarrollado por: Francisco Pinto, UTP y todo el equipo técnico para la postulación al <strong>Global School Prize</strong>."
+          data-i18n-en="Site developed by: Francisco Pinto, UTP and the whole technical team for the <strong>Global Schools Prize</strong> application."
+          data-i18n-map="Sitio desarrollado por: Francisco Pinto, UTP y todo el equipo técnico para la postulación al <strong>Global School Prize</strong>.">
+          Sitio desarrollado por: Francisco Pinto, UTP y todo el equipo tecnico para postulación <strong>Global School Prize</strong>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/animejs/dist/bundles/anime.umd.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
