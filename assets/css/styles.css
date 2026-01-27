@@ -909,3 +909,39 @@ body.light-theme .carousel-track {
   margin-bottom: 0.75rem;
   font-size: 1.2rem;
 }
+
+/* Micro-interacciones extra para timeline-card */
+.timeline-card {
+  cursor: default;
+  transition:
+    transform 0.22s ease-out,
+    box-shadow 0.22s ease-out,
+    border-color 0.22s ease-out,
+    background 0.22s ease-out;
+}
+
+.timeline-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top left,
+    rgba(250, 204, 21, 0.09),
+    transparent 60%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease-out;
+}
+
+.timeline-card:hover {
+  box-shadow: 0 22px 60px rgba(15, 23, 42, 0.98);
+  border-color: rgba(250, 204, 21, 0.9);
+  background: radial-gradient(circle at top left,
+    rgba(250, 204, 21, 0.1),
+    #020617 55%,
+    #020617 100%);
+}
+
+.timeline-card:hover::after {
+  opacity: 1;
+}
+
